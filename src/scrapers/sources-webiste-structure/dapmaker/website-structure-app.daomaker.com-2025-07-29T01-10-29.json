@@ -1,0 +1,605 @@
+{
+  "extractionInfo": {
+    "timestamp": 1753751429492,
+    "url": "https://app.daomaker.com/",
+    "domain": "app.daomaker.com",
+    "extractedAt": "2025-07-29T01:10:29.492Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+  },
+  "advancedAnalysis": {
+    "scrapingIntelligence": {
+      "difficulty": {
+        "level": "VERY HARD",
+        "score": 8,
+        "factors": [
+          "Heavy JavaScript usage (21 scripts)",
+          "Anti-bot protection detected"
+        ],
+        "recommendation": "Use headless browser (Puppeteer/Playwright) with stealth plugins, implement delays, rotate user agents"
+      },
+      "strategy": {
+        "difficulty": "medium",
+        "approach": "dynamic",
+        "requirements": [
+          "JavaScript rendering"
+        ],
+        "recommendations": [
+          {
+            "type": "framework",
+            "message": "SPA detected - use browser automation for dynamic content",
+            "tools": [
+              "Puppeteer",
+              "Playwright",
+              "Selenium"
+            ],
+            "waitStrategies": [
+              "networkidle",
+              "element selectors",
+              "custom conditions"
+            ]
+          }
+        ],
+        "codeExamples": {
+          "puppeteer": "\nconst puppeteer = require('puppeteer');\n\n(async () => {\n  const browser = await puppeteer.launch({ headless: false });\n  const page = await browser.newPage();\n  \n  // Set viewport for consistent rendering\n  await page.setViewport({ width: 1920, height: 1080 });\n  \n  // Navigate to page\n  await page.goto('https://app.daomaker.com/', { \n    waitUntil: 'networkidle0' // Wait for SPA to load\n  });\n  \n  \n  \n  // Wait for specific elements (adjust selectors based on your needs)\n  await page.waitForSelector('[data-testid=\"main-content\"]', { timeout: 30000 });\n  \n  // Extract data\n  const data = await page.evaluate(() => {\n    // Your extraction logic here\n    return document.title;\n  });\n  \n  console.log(data);\n  await browser.close();\n})();"
+        }
+      },
+      "keySelectors": {
+        "navigation": [],
+        "content": [
+          {
+            "selector": "div.card",
+            "type": "content-block",
+            "hasLinks": 1,
+            "hasImages": 2
+          },
+          {
+            "selector": "div.card",
+            "type": "content-block",
+            "hasLinks": 1,
+            "hasImages": 2
+          },
+          {
+            "selector": "div.card",
+            "type": "content-block",
+            "hasLinks": 1,
+            "hasImages": 2
+          }
+        ],
+        "data": [],
+        "pagination": [
+          {
+            "selector": "[data-next-font=\"size-adjust\"]",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/media/40d40f0f334d7ad1-s.p.woff2"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/css/d12a25f809982c33.css"
+          },
+          {
+            "selector": "[data-n-g=\"\"]",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/css/d12a25f809982c33.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/chunks/8585-15dfe821c565558a.js"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/chunks/pages/staking-d8975c2e9f75f331.js"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/chunks/pages/airdrop-a7b095982ed78bc1.js"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/chunks/pages/farms-948e852d59e39ff2.js"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/chunks/pages/vaults-6d4bfcf9f57e9e9a.js"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://app.daomaker.com/_next/static/chunks/pages/launchpad-a09487d0a604d6fc.js"
+          }
+        ],
+        "search": []
+      },
+      "dataPatterns": {
+        "lists": [],
+        "tables": [],
+        "cards": [
+          {
+            "selector": ".card",
+            "count": 3,
+            "commonStructure": {
+              "hasImages": 3,
+              "hasLinks": 3,
+              "hasPrices": 0,
+              "hasDates": 0,
+              "commonClasses": {
+                "card": 3,
+                "mx-auto": 3,
+                "w-full": 3,
+                "cursor-pointer": 3,
+                "rounded-xl": 3,
+                "bg-base-200": 3,
+                "p-2": 3,
+                "duration-200": 3,
+                "sm:hover:scale-[1.01]": 3
+              }
+            }
+          },
+          {
+            "selector": "[class*=\"item\"]",
+            "count": 25,
+            "commonStructure": {
+              "hasImages": 4,
+              "hasLinks": 6,
+              "hasPrices": 2,
+              "hasDates": 0,
+              "commonClasses": {
+                "mx-auto": 2,
+                "flex": 25,
+                "h-20": 2,
+                "select-none": 1,
+                "items-center": 24,
+                "justify-between": 2,
+                "bg-base-300/40": 1,
+                "px-4": 2,
+                "md:bg-base-100/0": 1,
+                "md:px-8": 2,
+                "hidden": 1,
+                "gap-8": 3,
+                "rounded-3xl": 2,
+                "bg-base-200/40": 2,
+                "p-4": 1,
+                "px-8": 1,
+                "md:block": 1,
+                "md:gap-12": 1,
+                "justify-end": 1,
+                "gap-4": 2,
+                "text-sm": 2,
+                "lg:w-1/3": 1,
+                "h-full": 6,
+                "cursor-pointer": 2,
+                "gap-2": 1,
+                "p-2": 1,
+                "font-semibold": 1,
+                "h-12": 1,
+                "rounded-xl": 1,
+                "bg-primary": 1,
+                "px-2": 1,
+                "font-bold": 2,
+                "w-1/2": 4,
+                "flex-col": 12,
+                "sm:w-fit": 4,
+                "mt-4": 2,
+                "sm:mt-0": 2,
+                "mt-8": 1,
+                "justify-center": 6,
+                "md:mt-16": 1,
+                "lg:flex-row": 1,
+                "absolute": 5,
+                "left-0": 5,
+                "top-0": 5,
+                "w-full": 5,
+                "justify-left": 1,
+                "px-6": 1,
+                "sm:gap-8": 1,
+                "sm:px-10": 1,
+                "mt-16": 1,
+                "text-xl": 1,
+                "tracking-wide": 1,
+                "text-base-content/90": 1,
+                "mb-1": 1,
+                "mr-1": 1,
+                "mt-12": 1,
+                "items-end": 1
+              }
+            }
+          }
+        ],
+        "repeated": []
+      },
+      "navigationFlow": {
+        "mainMenu": [],
+        "breadcrumbs": [],
+        "footer": [],
+        "sidebar": []
+      },
+      "contentStructure": {
+        "headings": [],
+        "contentBlocks": [],
+        "mediaElements": {
+          "images": {
+            "total": 12,
+            "withAlt": 0,
+            "lazyLoaded": 5
+          },
+          "videos": {
+            "total": 0,
+            "embedded": 0
+          }
+        },
+        "interactiveElements": {
+          "buttons": 3,
+          "forms": 0,
+          "inputs": 4,
+          "clickableElements": 0
+        }
+      }
+    },
+    "technicalStack": {
+      "detectedFrameworks": [],
+      "libraries": [],
+      "buildTools": [
+        "Webpack"
+      ],
+      "cssFrameworks": [
+        "Utility CSS (likely Tailwind)"
+      ]
+    },
+    "interactionPoints": {
+      "forms": [],
+      "buttons": [
+        {
+          "text": "Proceed",
+          "selector": ".w-32",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": "button",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Connect Wallet",
+          "selector": ".btn-outline",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": ".checkbox"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": "#main-drawer"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": ".theme-controller"
+        },
+        {
+          "type": "textarea",
+          "name": "g-recaptcha-response",
+          "placeholder": "",
+          "required": false,
+          "selector": "#g-recaptcha-response"
+        }
+      ],
+      "dataSubmission": {
+        "forms": 0,
+        "ajaxForms": 0,
+        "fileUploads": 0,
+        "hiddenFields": 0
+      }
+    },
+    "contentAnalysis": {
+      "dataStructure": {
+        "jsonData": [
+          {
+            "type": "application/json",
+            "keys": [
+              "props",
+              "page",
+              "query",
+              "buildId",
+              "isFallback",
+              "isExperimentalCompile",
+              "gsp",
+              "scriptLoader"
+            ],
+            "size": 45790
+          }
+        ],
+        "structuredData": [],
+        "apiCalls": [],
+        "dataAttributes": {
+          "data-theme": 1,
+          "data-next-font": 1,
+          "data-n-g": 1,
+          "data-n-css": 1,
+          "data-style": 1
+        }
+      },
+      "contentPatterns": {
+        "repeatingElements": [
+          {
+            "selector": ".card",
+            "count": 3,
+            "avgWordCount": 3.6666666666666665
+          }
+        ],
+        "contentTypes": {
+          "articles": 0,
+          "blogs": 0,
+          "products": 0,
+          "news": 0
+        },
+        "navigationPatterns": {
+          "mainNav": 0,
+          "breadcrumbs": 0,
+          "pagination": 0,
+          "sidebar": 0
+        }
+      },
+      "listItems": [],
+      "tables": [],
+      "textPatterns": {
+        "wordCount": 110,
+        "avgWordsPerSentence": 6.75,
+        "hasPhone": false,
+        "hasEmail": false,
+        "hasPrice": true,
+        "hasDate": true
+      }
+    },
+    "performanceInsights": {
+      "loadingPatterns": {
+        "lazyImages": 5,
+        "asyncScripts": 2,
+        "deferScripts": 10,
+        "preloadLinks": 2
+      },
+      "assetOptimization": {
+        "minifiedScripts": 0,
+        "webpImages": 0,
+        "compressedAssets": 0
+      },
+      "renderingStrategy": {
+        "isCSR": false,
+        "hasSSR": null,
+        "hasStaticGeneration": false
+      },
+      "bottlenecks": [
+        "Too many scripts (21)"
+      ]
+    },
+    "metadata": {
+      "url": "https://app.daomaker.com/",
+      "title": "Home | DAO Maker",
+      "viewport": {
+        "width": 1920,
+        "height": 945,
+        "devicePixelRatio": 1
+      },
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "language": "en-US",
+      "timestamp": 1753751426101,
+      "buildTools": [
+        "Webpack"
+      ],
+      "environment": "production"
+    },
+    "architecture": {
+      "isModular": {
+        "hasModules": false,
+        "hasImportMaps": false,
+        "hasDynamicImports": false,
+        "moduleCount": 0
+      },
+      "bundleStrategy": [
+        "webpack"
+      ],
+      "loadingStrategy": [
+        "defer",
+        "async",
+        "preload"
+      ],
+      "componentArchitecture": "Component-based (Angular)",
+      "codeStructure": {
+        "totalScripts": 21,
+        "externalScripts": 3,
+        "inlineScripts": 2,
+        "stylesheets": 1,
+        "moduleScripts": 0
+      }
+    },
+    "frameworks": [
+      {
+        "name": "React",
+        "version": "unknown",
+        "components": {
+          "rootElements": 0,
+          "fiberNodes": 0,
+          "components": []
+        },
+        "hooks": false,
+        "context": false,
+        "router": false,
+        "detected": true,
+        "indicators": {
+          "windowReact": false,
+          "reactRoot": false,
+          "reactHelmet": false,
+          "reactInSource": false,
+          "reactDevTools": false,
+          "reactFiber": false,
+          "reactBundle": true,
+          "reactDom": false,
+          "jsxInSource": false,
+          "reactScripts": false
+        }
+      },
+      {
+        "name": "Angular",
+        "version": "unknown",
+        "components": {
+          "components": 4
+        },
+        "services": 0,
+        "router": null,
+        "detected": true
+      },
+      {
+        "name": "Next.js",
+        "version": "unknown",
+        "pages": {},
+        "api": false,
+        "ssr": true,
+        "detected": true
+      }
+    ],
+    "authentication": {
+      "type": "none",
+      "mechanisms": [],
+      "flows": [],
+      "storage": [],
+      "providers": [],
+      "indicators": {}
+    },
+    "debug": {
+      "networkRequestsCount": 0,
+      "scriptsCount": 21,
+      "elementsCount": 313,
+      "hasReact": false,
+      "hasVue": false,
+      "hasAngular": false,
+      "timestamp": 1753751426133,
+      "pageContent": {
+        "title": "Home | DAO Maker",
+        "bodyLength": 77232,
+        "scriptSources": [
+          "https://www.gstatic.com/recaptcha/releases/ngcIAHyEnHQZZIKkyKneDTW3/recaptcha__en.js",
+          "https://app.daomaker.com/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+          "https://app.daomaker.com/_next/static/chunks/webpack-29f99315bd3e36c2.js",
+          "https://app.daomaker.com/_next/static/chunks/framework-314c182fa7e2bf37.js",
+          "https://app.daomaker.com/_next/static/chunks/main-c1583e3a184f9bd4.js",
+          "https://app.daomaker.com/_next/static/chunks/pages/_app-1b0faa961a21d59b.js",
+          "https://app.daomaker.com/_next/static/chunks/a3ff1dbb-f27e313a55ab006e.js",
+          "https://app.daomaker.com/_next/static/chunks/7569-776cc2a3f182f553.js",
+          "https://app.daomaker.com/_next/static/chunks/pages/index-b4cbf02b4e24dda5.js",
+          "https://app.daomaker.com/_next/static/a8xY9J32eqKRKdGYd3fM6/_buildManifest.js"
+        ],
+        "classNames": [
+          "__className_2a7671",
+          "cursor-default",
+          "my-6",
+          "modal",
+          "px-5",
+          "modal-box",
+          "max-w-md",
+          "mb-6",
+          "form-control",
+          "label",
+          "w-fit",
+          "cursor-pointer",
+          "checkbox",
+          "label-text",
+          "ml-4",
+          "mx-auto",
+          "mt-4",
+          "flex",
+          "w-32",
+          "btn"
+        ],
+        "windowGlobals": []
+      }
+    },
+    "pageAnalysis": {
+      "totalScripts": 21,
+      "externalScripts": 19,
+      "inlineScripts": 2,
+      "totalStyles": 6,
+      "totalImages": 12,
+      "totalForms": 0,
+      "totalLinks": 20,
+      "hasServiceWorker": true,
+      "hasLocalStorage": true,
+      "hasWebGL": true,
+      "hasWebAssembly": true,
+      "viewport": "width=device-width",
+      "charset": "UTF-8",
+      "doctype": "html"
+    }
+  },
+  "developerInsights": [],
+  "scrapingStrategy": {},
+  "performance": {},
+  "security": {},
+  "frameworks": [
+    {
+      "name": "React",
+      "version": "unknown",
+      "components": {
+        "rootElements": 0,
+        "fiberNodes": 0,
+        "components": []
+      },
+      "hooks": false,
+      "context": false,
+      "router": false,
+      "detected": true,
+      "indicators": {
+        "windowReact": false,
+        "reactRoot": false,
+        "reactHelmet": false,
+        "reactInSource": false,
+        "reactDevTools": false,
+        "reactFiber": false,
+        "reactBundle": true,
+        "reactDom": false,
+        "jsxInSource": false,
+        "reactScripts": false
+      }
+    },
+    {
+      "name": "Angular",
+      "version": "unknown",
+      "components": {
+        "components": 4
+      },
+      "services": 0,
+      "router": null,
+      "detected": true
+    },
+    {
+      "name": "Next.js",
+      "version": "unknown",
+      "pages": {},
+      "api": false,
+      "ssr": true,
+      "detected": true
+    }
+  ],
+  "apiEndpoints": {},
+  "codeExamples": {}
+}

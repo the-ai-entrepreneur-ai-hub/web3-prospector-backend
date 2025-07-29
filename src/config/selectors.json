@@ -1,0 +1,274 @@
+{
+  "cryptorank": {
+    "baseUrl": "https://cryptorank.io",
+    "pages": {
+      "tokenSales": "/ico",
+      "upcomingSales": "/ico?status=upcoming",
+      "activeSales": "/ico?status=active"
+    },
+    "selectors": {
+      "projectList": [
+        "TODO: Update these selectors"
+      ],
+      "projectLink": [
+        "TODO: Update these selectors"
+      ],
+      "projectName": [
+        "TODO: Update these selectors"
+      ],
+      "projectDescription": [
+        "TODO: Update these selectors"
+      ],
+      "socialLinks": [
+        "TODO: Update these selectors"
+      ],
+      "website": [
+        "TODO: Update these selectors"
+      ],
+      "category": [
+        "TODO: Update these selectors"
+      ],
+      "saleDate": [
+        "TODO: Update these selectors"
+      ]
+    }
+  },
+  "coinmarketcap": {
+    "baseUrl": "https://coinmarketcap.com",
+    "pages": {
+      "newCryptos": "/new/"
+    },
+    "selectors": {
+      "nextDataScript": [
+        "script#__NEXT_DATA__"
+      ],
+      "coinList": "props.pageProps.data.data.recentlyAddedList",
+      "detailPage": {
+        "socialUrls": "props.pageProps.detailRes.detail.urls"
+      }
+    }
+  },
+  "icodrops": {
+    "baseUrl": "https://icodrops.com",
+    "pages": {
+      "main": "/",
+      "upcoming": "/#upcoming",
+      "active": "/#active",
+      "ended": "/#ended"
+    },
+    "selectors": {
+      "projectCards": [
+        ".All-Projects__item",
+        ".project-card",
+        ".ico-card",
+        "div[class*='item']",
+        "a[href*='/projects/']"
+      ],
+      "projectName": [
+        "h1.Project-Page-Header__name",
+        ".project-title",
+        ".name"
+      ],
+      "description": [
+        ".Overview-Section-Description__text",
+        ".description",
+        ".project-description"
+      ],
+      "socialLinks": [
+        ".Project-Page-Header__links-list a",
+        ".social-links a",
+        ".links a"
+      ],
+      "socialText": [
+        ".capsule__text",
+        ".text",
+        "span"
+      ],
+      "projectInfo": [
+        ".Project-Page-Info__item",
+        ".info-item",
+        ".project-detail"
+      ]
+    }
+  },
+  "dappradar": {
+    "baseUrl": "https://dappradar.com",
+    "pages": {
+      "defi": "/rankings/category/defi",
+      "games": "/rankings/category/games",
+      "exchanges": "/rankings/category/exchanges",
+      "marketplaces": "/rankings/category/marketplaces"
+    },
+    "selectors": {
+      "dappItems": [
+        "[data-testid='dapp-item']", 
+        ".sc-AxgMl", 
+        ".dapp-card", 
+        ".ranking-item",
+        "div[class*='ListItem']",
+        "a[class*='Card']"
+      ],
+      "dappLink": [
+        "a[href*='/dapp/']", 
+        ".dapp-link",
+        "a"
+      ],
+      "dappName": [
+        "h3", 
+        ".sc-AxgMl h4", 
+        "[data-testid='dapp-name']", 
+        ".dapp-name",
+        "div[class*='Name']"
+      ],
+      "category": [
+        "[data-testid='dapp-category']",
+        ".category",
+        ".tag"
+      ],
+      "description": [
+        "[data-testid='dapp-description']",
+        ".description",
+        ".about-text"
+      ],
+      "blockchain": [
+        "[data-testid='blockchain']",
+        ".blockchain",
+        ".chain-name"
+      ],
+      "users": [
+        "[data-testid='users']",
+        ".users-count",
+        ".user-metric"
+      ]
+    }
+  },
+  "zealy": {
+    "baseUrl": "https://zealy.io",
+    "pages": {
+      "explore": "/explore",
+      "communities": "/communities"
+    },
+    "selectors": {
+      "communityCards": [
+        ".community-card",
+        "[data-testid='community-card']",
+        ".project-card"
+      ],
+      "communityName": [
+        ".community-name",
+        "h3",
+        ".title"
+      ],
+      "description": [
+        ".description",
+        ".community-description"
+      ],
+      "socialLinks": [
+        ".social-links a",
+        "a[href*='twitter.com']",
+        "a[href*='discord']"
+      ],
+      "website": [
+        "a[href*='www.']",
+        ".website-link"
+      ],
+      "members": [
+        ".member-count",
+        ".members"
+      ]
+    }
+  },
+  "daomaker": {
+    "baseUrl": "https://app.daomaker.com",
+    "pages": {
+      "projects": "/projects",
+      "upcoming": "/projects?status=upcoming",
+      "active": "/projects?status=active",
+      "completed": "/projects?status=completed"
+    },
+    "selectors": {
+      "projectCards": [
+        "[data-testid='project-card']",
+        ".project-card",
+        ".dao-project",
+        ".project-item",
+        "a[href*='/projects/']"
+      ],
+      "projectName": [
+        "h3",
+        "h4",
+        ".project-name",
+        ".title",
+        "[data-testid='project-name']",
+        ".project-title"
+      ],
+      "projectStatus": [
+        ".status",
+        ".stage",
+        ".project-status",
+        "[data-testid='project-status']"
+      ],
+      "description": [
+        ".project-description",
+        ".description",
+        ".about-project",
+        "[data-testid='project-description']",
+        ".overview-text",
+        ".project-overview",
+        ".summary"
+      ],
+      "socialLinks": [
+        "a[href]",
+        ".social-links a",
+        ".project-links a",
+        "[data-testid='social-link']",
+        ".external-links a"
+      ],
+      "projectInfo": [
+        ".project-info",
+        ".project-details",
+        ".token-info",
+        "[data-testid='project-meta']",
+        ".project-stats"
+      ]
+    }
+  },
+  "polkastarter": {
+    "baseUrl": "https://polkastarter.com",
+    "pages": {
+      "projects": "/projects",
+      "upcoming": "/projects?status=upcoming",
+      "live": "/projects?status=live",
+      "completed": "/projects?status=completed"
+    },
+    "selectors": {
+      "projectCards": [
+        ".project-card",
+        "[data-testid='project-card']",
+        ".pool-card"
+      ],
+      "projectName": [
+        ".project-name",
+        "h3",
+        ".title"
+      ],
+      "description": [
+        ".description",
+        ".project-description"
+      ],
+      "socialLinks": [
+        ".social-links a",
+        "a[href*='twitter.com']",
+        "a[href*='telegram']"
+      ],
+      "website": [
+        "a[href*='www.']",
+        ".website-link"
+      ],
+      "tokenInfo": [
+        ".token-info",
+        ".project-details"
+      ]
+    }
+  }
+}

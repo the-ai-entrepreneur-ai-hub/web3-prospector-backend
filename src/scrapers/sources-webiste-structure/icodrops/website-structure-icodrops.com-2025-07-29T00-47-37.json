@@ -1,0 +1,1205 @@
+{
+  "extractionInfo": {
+    "timestamp": 1753750057886,
+    "url": "https://icodrops.com/",
+    "domain": "icodrops.com",
+    "extractedAt": "2025-07-29T00:47:37.886Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+  },
+  "advancedAnalysis": {
+    "scrapingIntelligence": {
+      "difficulty": {
+        "level": "EASY",
+        "score": 0,
+        "factors": [],
+        "recommendation": "Simple HTTP requests should work, minimal anti-bot protection"
+      },
+      "strategy": {
+        "difficulty": "medium",
+        "approach": "dynamic",
+        "requirements": [
+          "JavaScript rendering"
+        ],
+        "recommendations": [
+          {
+            "type": "framework",
+            "message": "SPA detected - use browser automation for dynamic content",
+            "tools": [
+              "Puppeteer",
+              "Playwright",
+              "Selenium"
+            ],
+            "waitStrategies": [
+              "networkidle",
+              "element selectors",
+              "custom conditions"
+            ]
+          }
+        ],
+        "codeExamples": {
+          "puppeteer": "\nconst puppeteer = require('puppeteer');\n\n(async () => {\n  const browser = await puppeteer.launch({ headless: false });\n  const page = await browser.newPage();\n  \n  // Set viewport for consistent rendering\n  await page.setViewport({ width: 1920, height: 1080 });\n  \n  // Navigate to page\n  await page.goto('https://icodrops.com/', { \n    waitUntil: 'networkidle0' // Wait for SPA to load\n  });\n  \n  \n  \n  // Wait for specific elements (adjust selectors based on your needs)\n  await page.waitForSelector('[data-testid=\"main-content\"]', { timeout: 30000 });\n  \n  // Extract data\n  const data = await page.evaluate(() => {\n    // Your extraction logic here\n    return document.title;\n  });\n  \n  console.log(data);\n  await browser.close();\n})();"
+        }
+      },
+      "keySelectors": {
+        "navigation": [
+          {
+            "selector": "a",
+            "text": "Active",
+            "href": "https://icodrops.com/category/active-ico/"
+          },
+          {
+            "selector": "a",
+            "text": "Upcoming",
+            "href": "https://icodrops.com/category/upcoming-ico/"
+          },
+          {
+            "selector": "a",
+            "text": "Ended",
+            "href": "https://icodrops.com/category/ended-ico/"
+          },
+          {
+            "selector": "a",
+            "text": "ICO stats",
+            "href": "https://icodrops.com/ico-stats/"
+          },
+          {
+            "selector": "a",
+            "text": "VC",
+            "href": "https://icodrops.com/vc/funding-rounds/"
+          },
+          {
+            "selector": "a",
+            "text": "Points Farming",
+            "href": "https://icodrops.com/points-farming/"
+          },
+          {
+            "selector": "a",
+            "text": "Active",
+            "href": "https://icodrops.com/category/active-ico/"
+          },
+          {
+            "selector": "a",
+            "text": "Upcoming",
+            "href": "https://icodrops.com/category/upcoming-ico/"
+          },
+          {
+            "selector": "a",
+            "text": "Ended",
+            "href": "https://icodrops.com/category/ended-ico/"
+          },
+          {
+            "selector": "a",
+            "text": "ICO stats",
+            "href": "https://icodrops.com/ico-stats/"
+          },
+          {
+            "selector": "a",
+            "text": "VC",
+            "href": "https://icodrops.com/vc/funding-rounds/"
+          },
+          {
+            "selector": "a",
+            "text": "Points Farming",
+            "href": "https://icodrops.com/points-farming/"
+          }
+        ],
+        "content": [],
+        "data": [
+          {
+            "selector": "li.Cpsl-Txt",
+            "type": "list-item",
+            "text": "Meme"
+          },
+          {
+            "selector": "li.Cpsl-Txt",
+            "type": "list-item",
+            "text": "Points Farming"
+          },
+          {
+            "selector": "li.Cpsl-Txt",
+            "type": "list-item",
+            "text": "Node Sale"
+          },
+          {
+            "selector": "li.Cpsl-Txt",
+            "type": "list-item",
+            "text": "Tier 1 VC"
+          },
+          {
+            "selector": "li.Cpsl-Txt",
+            "type": "list-item",
+            "text": "New"
+          }
+        ],
+        "pagination": [],
+        "search": []
+      },
+      "dataPatterns": {
+        "lists": [
+          {
+            "selector": ".Filter-Row-Data",
+            "itemCount": 14,
+            "itemSelector": ".Filter-Row-Data li",
+            "sampleContent": [
+              "Meme",
+              "Points Farming",
+              "Node Sale"
+            ]
+          },
+          {
+            "selector": ".Filter-Ecos-List",
+            "itemCount": 5,
+            "itemSelector": ".Filter-Ecos-List li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Filter-Dropdown__list",
+            "itemCount": 16,
+            "itemSelector": "ul.Filter-Dropdown__list li",
+            "sampleContent": [
+              "Meme",
+              "Points Farming",
+              "Node Sale"
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "ul.Stacked-Images",
+            "itemCount": 4,
+            "itemSelector": "ul.Stacked-Images li",
+            "sampleContent": [
+              "",
+              "",
+              ""
+            ]
+          }
+        ],
+        "tables": [],
+        "cards": [
+          {
+            "selector": "[class*=\"item\"]",
+            "count": 222,
+            "commonStructure": {
+              "hasImages": 171,
+              "hasLinks": 3,
+              "hasPrices": 45,
+              "hasDates": 0,
+              "commonClasses": {
+                "Hdr-Panel__item": 4,
+                "Hdr-Panel__item--logo": 1,
+                "Hdr-Panel__item--links": 1,
+                "Hdr-Panel__item--search": 1,
+                "Hdr-Panel__item--menu": 1,
+                "Cpsl-Txt": 9,
+                "Cpsl-Txt--fltr": 9,
+                "Cpsl-Txt--hover": 9,
+                "Filter-Row-Data__item": 14,
+                "Cpsl-Icon-Name": 5,
+                "Cpsl-Icon-Name--hover": 5,
+                "Cpsl-Icon-Name--fltr": 5,
+                "Filter-Ecos-List__item": 5,
+                "All-Projects-Nav__item": 3,
+                "All-Projects-Nav__item--active": 1,
+                "All-Projects__item": 60,
+                "List-Labels__item": 26,
+                "Stacked-Images__item": 110,
+                "Stacked-Images__item--hover": 110
+              }
+            }
+          }
+        ],
+        "repeated": []
+      },
+      "navigationFlow": {
+        "mainMenu": [
+          {
+            "text": "TOKEN6900\n  Whales Bet It’s The Next SPX6900. Presale Live!\n  \n    Buy T6900\n    \n  \n  \n  \n  \n\n  \n  AD",
+            "href": "https://bs_e9f08304.mooncoin.care/",
+            "isExternal": true
+          },
+          {
+            "text": "",
+            "href": "https://icodrops.com/",
+            "isExternal": false
+          },
+          {
+            "text": "Active",
+            "href": "https://icodrops.com/category/active-ico/",
+            "isExternal": false
+          },
+          {
+            "text": "Upcoming",
+            "href": "https://icodrops.com/category/upcoming-ico/",
+            "isExternal": false
+          },
+          {
+            "text": "Ended",
+            "href": "https://icodrops.com/category/ended-ico/",
+            "isExternal": false
+          },
+          {
+            "text": "ICO stats",
+            "href": "https://icodrops.com/ico-stats/",
+            "isExternal": false
+          },
+          {
+            "text": "VC",
+            "href": "https://icodrops.com/vc/funding-rounds/",
+            "isExternal": false
+          },
+          {
+            "text": "Points Farming",
+            "href": "https://icodrops.com/points-farming/",
+            "isExternal": false
+          },
+          {
+            "text": "",
+            "href": "https://icodrops.com/",
+            "isExternal": false
+          },
+          {
+            "text": "Active",
+            "href": "https://icodrops.com/category/active-ico/",
+            "isExternal": false
+          },
+          {
+            "text": "Upcoming",
+            "href": "https://icodrops.com/category/upcoming-ico/",
+            "isExternal": false
+          },
+          {
+            "text": "Ended",
+            "href": "https://icodrops.com/category/ended-ico/",
+            "isExternal": false
+          },
+          {
+            "text": "ICO stats",
+            "href": "https://icodrops.com/ico-stats/",
+            "isExternal": false
+          },
+          {
+            "text": "VC",
+            "href": "https://icodrops.com/vc/funding-rounds/",
+            "isExternal": false
+          },
+          {
+            "text": "Points Farming",
+            "href": "https://icodrops.com/points-farming/",
+            "isExternal": false
+          },
+          {
+            "text": "DropsTab",
+            "href": "https://dropstab.com/",
+            "isExternal": true
+          },
+          {
+            "text": "DropsEarn",
+            "href": "https://dropsearn.com/",
+            "isExternal": true
+          },
+          {
+            "text": "DropsCapital (RU)",
+            "href": "https://dropscapital.com/",
+            "isExternal": true
+          },
+          {
+            "text": "Advertising",
+            "href": "https://icodrops.com/advertising/",
+            "isExternal": false
+          },
+          {
+            "text": "About",
+            "href": "https://icodrops.com/about/",
+            "isExternal": false
+          },
+          {
+            "text": "Legal",
+            "href": "https://icodrops.com/legal/",
+            "isExternal": false
+          }
+        ],
+        "breadcrumbs": [],
+        "footer": [
+          {
+            "text": "",
+            "href": "https://icodrops.com/"
+          },
+          {
+            "text": "Active ICO",
+            "href": "https://icodrops.com/category/active-ico/"
+          },
+          {
+            "text": "Upcoming ICO",
+            "href": "https://icodrops.com/category/upcoming-ico/"
+          },
+          {
+            "text": "Ended ICO",
+            "href": "https://icodrops.com/category/ended-ico/"
+          },
+          {
+            "text": "ICO Stats",
+            "href": "https://icodrops.com/ico-stats/"
+          },
+          {
+            "text": "Investors & VC’s",
+            "href": "https://icodrops.com/vc/list/"
+          },
+          {
+            "text": "Funding Rounds",
+            "href": "https://icodrops.com/vc/funding-rounds/"
+          },
+          {
+            "text": "Email",
+            "href": "mailto:hello@icodrops.com"
+          },
+          {
+            "text": "Twitter",
+            "href": "https://twitter.com/ICODrops"
+          },
+          {
+            "text": "Telegram News",
+            "href": "https://t.me/icodrops"
+          },
+          {
+            "text": "Telegram Chat (EN)",
+            "href": "https://t.me/joinchat/FoisO0k4-XXBkPEikfdgow"
+          },
+          {
+            "text": "Telegram Chat (RU)",
+            "href": "https://t.me/joinchat/FoisO0R8kn58iNNlqnNjlg"
+          },
+          {
+            "text": "Cryptonarnia Chat (RU)",
+            "href": "https://t.me/joinchat/FoisO1Ge70JnvvyaFMdBsQ"
+          },
+          {
+            "text": "DropsEarn Chat (RU)",
+            "href": "https://t.me/joinchat/FoisO1OCo4g1o6vyBNnJaw"
+          },
+          {
+            "text": "Marketing Issues",
+            "href": "https://t.me/Jerrys2"
+          },
+          {
+            "text": "Submit ICO",
+            "href": "https://forms.gle/7RuDz1nEcMnRkKpb7"
+          },
+          {
+            "text": "DropsTab",
+            "href": "https://dropstab.com/"
+          },
+          {
+            "text": "DropsEarn",
+            "href": "https://dropsearn.com/"
+          },
+          {
+            "text": "DropsCapital (RU)",
+            "href": "https://dropscapital.com/"
+          },
+          {
+            "text": "ICO Calendar",
+            "href": "https://icodrops.com/calendar/"
+          },
+          {
+            "text": "Advertising",
+            "href": "https://icodrops.com/advertising/"
+          },
+          {
+            "text": "About",
+            "href": "https://icodrops.com/about/"
+          },
+          {
+            "text": "Legal",
+            "href": "https://icodrops.com/legal/"
+          },
+          {
+            "text": "Learn more",
+            "href": "https://icodrops.com/legal/"
+          }
+        ],
+        "sidebar": []
+      },
+      "contentStructure": {
+        "headings": [
+          {
+            "level": 1,
+            "text": "ICO Calendar",
+            "selector": "h1"
+          },
+          {
+            "level": 1,
+            "text": "ICO Calendar",
+            "selector": "h1"
+          }
+        ],
+        "contentBlocks": [
+          {
+            "selector": ".Hdr-Menu-Dropdown",
+            "wordCount": 166,
+            "hasImages": 0,
+            "hasLinks": 13,
+            "type": "section"
+          },
+          {
+            "selector": ".Filter",
+            "wordCount": 864,
+            "hasImages": 15,
+            "hasLinks": 0,
+            "type": "section"
+          },
+          {
+            "selector": ".All-Projects__tabs",
+            "wordCount": 5,
+            "hasImages": 0,
+            "hasLinks": 0,
+            "type": "section"
+          },
+          {
+            "selector": "#columns",
+            "wordCount": 19721,
+            "hasImages": 224,
+            "hasLinks": 66,
+            "type": "section"
+          }
+        ],
+        "mediaElements": {
+          "images": {
+            "total": 241,
+            "withAlt": 216,
+            "lazyLoaded": 0
+          },
+          "videos": {
+            "total": 0,
+            "embedded": 0
+          }
+        },
+        "interactiveElements": {
+          "buttons": 17,
+          "forms": 0,
+          "inputs": 2,
+          "clickableElements": 0
+        }
+      }
+    },
+    "technicalStack": {
+      "detectedFrameworks": [],
+      "libraries": [],
+      "buildTools": [],
+      "cssFrameworks": [
+        "Utility CSS (likely Tailwind)"
+      ]
+    },
+    "interactionPoints": {
+      "forms": [],
+      "buttons": [
+        {
+          "text": "Button",
+          "selector": "button.Btn-Header",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": ".Hdr-Menu__btn",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": ".Hdr-Menu-Dropdown__close",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": "button.Btn-Header",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Clear",
+          "selector": ".Filter__clear",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Filters",
+          "selector": ".Cpsl-Txt-Icon",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Clear Filters",
+          "selector": ".Filter-Dropdown__clear",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Popular",
+          "selector": "button.Filter-Dropdown__btn",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Ecosystems",
+          "selector": "button.Filter-Dropdown__btn",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Launchpads",
+          "selector": "button.Filter-Dropdown__btn",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Categories",
+          "selector": "button.Filter-Dropdown__btn",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Active",
+          "selector": ".All-Projects-Nav__item--active",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Upcoming",
+          "selector": "button.All-Projects-Nav__item",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Ended",
+          "selector": "button.All-Projects-Nav__item",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": ".svg-close",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": ".Ftr-Btn-Up",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Agree",
+          "selector": ".Ftr-Note__btn",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Search",
+          "required": false,
+          "selector": "input.Search__input"
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Search",
+          "required": false,
+          "selector": "input.Search__input"
+        }
+      ],
+      "dataSubmission": {
+        "forms": 0,
+        "ajaxForms": 0,
+        "fileUploads": 0,
+        "hiddenFields": 0
+      }
+    },
+    "contentAnalysis": {
+      "dataStructure": {
+        "jsonData": [],
+        "structuredData": [],
+        "apiCalls": [],
+        "dataAttributes": {
+          "data-hdr-all-projcts": 2,
+          "data-hdr-active": 2,
+          "data-hdr-upcoming": 2,
+          "data-hdr-ended": 2,
+          "data-hdr-ico-stats": 2,
+          "data-hdr-vc": 2,
+          "data-hdr-points-farming": 2,
+          "data-header-menu-dropdown": 1,
+          "data-filter-capsule": 9,
+          "data-filter-capsule-id": 5
+        }
+      },
+      "contentPatterns": {
+        "repeatingElements": [],
+        "contentTypes": {
+          "articles": 0,
+          "blogs": 0,
+          "products": 0,
+          "news": 0
+        },
+        "navigationPatterns": {
+          "mainNav": 2,
+          "breadcrumbs": 0,
+          "pagination": 0,
+          "sidebar": 0
+        }
+      },
+      "listItems": [
+        {
+          "type": "ul",
+          "selector": ".Filter-Row-Data",
+          "itemCount": 14,
+          "nested": false,
+          "sampleItems": [
+            "Meme",
+            "Points Farming",
+            "Node Sale"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": ".Filter-Ecos-List",
+          "itemCount": 5,
+          "nested": false,
+          "sampleItems": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.Filter-Dropdown__list",
+          "itemCount": 16,
+          "nested": false,
+          "sampleItems": [
+            "Meme",
+            "Points Farming",
+            "Node Sale"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.List-Labels",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "",
+            "AD"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.List-Labels",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "",
+            "AD"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.List-Labels",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "",
+            "AD"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.Stacked-Images",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.Stacked-Images",
+          "itemCount": 4,
+          "nested": false,
+          "sampleItems": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.Stacked-Images",
+          "itemCount": 4,
+          "nested": false,
+          "sampleItems": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.Stacked-Images",
+          "itemCount": 4,
+          "nested": false,
+          "sampleItems": [
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "tables": [],
+      "textPatterns": {
+        "wordCount": 21966,
+        "avgWordsPerSentence": 0,
+        "hasPhone": false,
+        "hasEmail": false,
+        "hasPrice": true,
+        "hasDate": false
+      }
+    },
+    "performanceInsights": {
+      "loadingPatterns": {
+        "lazyImages": 0,
+        "asyncScripts": 1,
+        "deferScripts": 4,
+        "preloadLinks": 0
+      },
+      "assetOptimization": {
+        "minifiedScripts": 4,
+        "webpImages": 40,
+        "compressedAssets": 0
+      },
+      "renderingStrategy": {
+        "isCSR": false,
+        "hasSSR": null,
+        "hasStaticGeneration": false
+      },
+      "bottlenecks": [
+        "Many images (241) - consider lazy loading"
+      ]
+    },
+    "metadata": {
+      "url": "https://icodrops.com/",
+      "title": "ICO Drops - Calendar of active and upcoming ICO & IEO. Complete list with Token Sales",
+      "viewport": {
+        "width": 1920,
+        "height": 945,
+        "devicePixelRatio": 1
+      },
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "language": "en-US",
+      "timestamp": 1753750052122,
+      "buildTools": [],
+      "environment": "production"
+    },
+    "architecture": {
+      "isModular": {
+        "hasModules": false,
+        "hasImportMaps": false,
+        "hasDynamicImports": false,
+        "moduleCount": 0
+      },
+      "bundleStrategy": [],
+      "loadingStrategy": [
+        "defer",
+        "async"
+      ],
+      "componentArchitecture": "Component-based (Angular)",
+      "codeStructure": {
+        "totalScripts": 8,
+        "externalScripts": 6,
+        "inlineScripts": 2,
+        "stylesheets": 2,
+        "moduleScripts": 0
+      }
+    },
+    "frameworks": [
+      {
+        "name": "Angular",
+        "version": "unknown",
+        "components": {
+          "components": 12
+        },
+        "services": 0,
+        "router": null,
+        "detected": true
+      },
+      {
+        "name": "Alpine.js",
+        "detected": true
+      }
+    ],
+    "authentication": {
+      "type": "none",
+      "mechanisms": [],
+      "flows": [],
+      "storage": [],
+      "providers": [],
+      "indicators": {}
+    },
+    "debug": {
+      "networkRequestsCount": 0,
+      "scriptsCount": 8,
+      "elementsCount": 1796,
+      "hasReact": false,
+      "hasVue": false,
+      "hasAngular": false,
+      "timestamp": 1753750052189,
+      "pageContent": {
+        "title": "ICO Drops - Calendar of active and upcoming ICO & IEO. Complete list with Token Sales",
+        "bodyLength": 294176,
+        "scriptSources": [
+          "https://mc.yandex.ru/metrika/tag.js",
+          "https://dropsearn.fra1.cdn.digitaloceanspaces.com/static/icodrops/prod/script/project-1749249403985.min.js",
+          "https://dropsearn.fra1.cdn.digitaloceanspaces.com/static/icodrops/js/libraries/turbolinks.min.js",
+          "https://dropsearn.fra1.cdn.digitaloceanspaces.com/static/icodrops/js/libraries/alpine.min.js",
+          "https://dropsearn.fra1.cdn.digitaloceanspaces.com/static/icodrops/js/libraries/lazyLoad.min.js",
+          "https://dropsearn.fra1.cdn.digitaloceanspaces.com/static/icodrops/js/libraries/cash.js"
+        ],
+        "classNames": [
+          "Body",
+          "light",
+          "Header",
+          "Header__adv",
+          "Restriction-Box",
+          "Restriction-Box--hdr-feature",
+          "Feature-Line",
+          "Avt",
+          "Avt--24",
+          "Feature-Line__img",
+          "Feature-Line__name",
+          "Feature-Line__txt",
+          "Feature-Line__btn",
+          "Feature-Line__icon",
+          "Badge",
+          "Badge--light-orange",
+          "Feature-Line__ad",
+          "Header__box",
+          "Restriction-Box--sides",
+          "Hdr-Panel"
+        ],
+        "windowGlobals": []
+      }
+    },
+    "pageAnalysis": {
+      "totalScripts": 8,
+      "externalScripts": 6,
+      "inlineScripts": 2,
+      "totalStyles": 5,
+      "totalImages": 241,
+      "totalForms": 0,
+      "totalLinks": 112,
+      "hasServiceWorker": true,
+      "hasLocalStorage": true,
+      "hasWebGL": true,
+      "hasWebAssembly": true,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "charset": "UTF-8",
+      "doctype": "html"
+    }
+  },
+  "developerInsights": [],
+  "scrapingStrategy": {},
+  "performance": {},
+  "security": {},
+  "frameworks": [
+    {
+      "name": "Angular",
+      "version": "unknown",
+      "components": {
+        "components": 12
+      },
+      "services": 0,
+      "router": null,
+      "detected": true
+    },
+    {
+      "name": "Alpine.js",
+      "detected": true
+    }
+  ],
+  "apiEndpoints": {},
+  "codeExamples": {}
+}
