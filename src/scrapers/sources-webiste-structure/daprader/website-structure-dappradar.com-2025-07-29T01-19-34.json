@@ -1,0 +1,1814 @@
+{
+  "extractionInfo": {
+    "timestamp": 1753751974196,
+    "url": "https://dappradar.com/",
+    "domain": "dappradar.com",
+    "extractedAt": "2025-07-29T01:19:34.196Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+  },
+  "advancedAnalysis": {
+    "scrapingIntelligence": {
+      "difficulty": {
+        "level": "VERY HARD",
+        "score": 8,
+        "factors": [
+          "Heavy JavaScript usage (16 scripts)",
+          "Anti-bot protection detected"
+        ],
+        "recommendation": "Use headless browser (Puppeteer/Playwright) with stealth plugins, implement delays, rotate user agents"
+      },
+      "strategy": {
+        "difficulty": "hard",
+        "approach": "dynamic",
+        "requirements": [
+          "JavaScript rendering",
+          "Authentication handling"
+        ],
+        "recommendations": [
+          {
+            "type": "framework",
+            "message": "SPA detected - use browser automation for dynamic content",
+            "tools": [
+              "Puppeteer",
+              "Playwright",
+              "Selenium"
+            ],
+            "waitStrategies": [
+              "networkidle",
+              "element selectors",
+              "custom conditions"
+            ]
+          },
+          {
+            "type": "authentication",
+            "message": "Authentication required - implement session management",
+            "strategies": [
+              "Cookie session management"
+            ],
+            "considerations": [
+              "CSRF tokens",
+              "Rate limiting",
+              "Session expiry"
+            ]
+          }
+        ],
+        "codeExamples": {
+          "puppeteer": "\nconst puppeteer = require('puppeteer');\n\n(async () => {\n  const browser = await puppeteer.launch({ headless: false });\n  const page = await browser.newPage();\n  \n  // Set viewport for consistent rendering\n  await page.setViewport({ width: 1920, height: 1080 });\n  \n  // Navigate to page\n  await page.goto('https://dappradar.com/', { \n    waitUntil: 'networkidle0' // Wait for SPA to load\n  });\n  \n  \n  \n  // Wait for specific elements (adjust selectors based on your needs)\n  await page.waitForSelector('[data-testid=\"main-content\"]', { timeout: 30000 });\n  \n  // Extract data\n  const data = await page.evaluate(() => {\n    // Your extraction logic here\n    return document.title;\n  });\n  \n  console.log(data);\n  await browser.close();\n})();"
+        }
+      },
+      "keySelectors": {
+        "navigation": [
+          {
+            "selector": "a",
+            "text": ".cls-1{fill:#fff;stroke-width:0}",
+            "href": "https://dappradar.com/"
+          },
+          {
+            "selector": ".dlMwNC",
+            "text": "List a project",
+            "href": "https://dappradar.com/dashboard/submit-dapp"
+          },
+          {
+            "selector": ".gkTyVy",
+            "text": "Get RADAR",
+            "href": "https://dappradar.com/radar/get-radar"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "Token overview",
+            "href": "https://dappradar.com/radar/overview"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "Staking",
+            "href": "https://dappradar.com/radar/staking"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "Resources",
+            "href": "https://dappradar.com/radar/resources"
+          },
+          {
+            "selector": ".sc-grBbyg",
+            "text": "Level up with DappRadarGo PRO",
+            "href": "https://dappradar.com/account/pro-membership"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "Portfolio--",
+            "href": "https://dappradar.com/portfolio"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "My profileLevel 0 XP to next level",
+            "href": "https://dappradar.com/account/profile"
+          },
+          {
+            "selector": ".gEggmO",
+            "text": "My Boosting Power (BP)-",
+            "href": "https://dappradar.com/boosting"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "Buy Crypto",
+            "href": "https://global.transak.com/?apiKey=05a2e21e-7e26-46c4-925c-d7ad33882817"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "Swap & bridge cross-chain",
+            "href": "https://dappradar.com/token-swap"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "PRO membership",
+            "href": "https://dappradar.com/account/pro-membership"
+          },
+          {
+            "selector": "a.sc-dkrFOg",
+            "text": "Alerts",
+            "href": "https://dappradar.com/account/alerts"
+          },
+          {
+            "selector": ".cmDuRY",
+            "text": "Home",
+            "href": "https://dappradar.com/"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Hot contractsNew",
+            "href": "https://dappradar.com/rankings/hot-contracts"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Web3 ecosystem",
+            "href": "https://dappradar.com/web3-ecosystem"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Upcoming",
+            "href": "https://dappradar.com/rankings/upcoming"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Gaming",
+            "href": "https://dappradar.com/narratives/gaming"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "DeFi",
+            "href": "https://dappradar.com/narratives/defi"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "AI x Crypto",
+            "href": "https://dappradar.com/narratives/ai"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Virtuals Genesis",
+            "href": "https://dappradar.com/narratives/virtuals-genesis"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Gambling",
+            "href": "https://dappradar.com/narratives/gambling"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Real-world Assets",
+            "href": "https://dappradar.com/narratives/rwa"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Social",
+            "href": "https://dappradar.com/rankings/social"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "High-risk",
+            "href": "https://dappradar.com/rankings/high-risk"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Global",
+            "href": "https://dappradar.com/rankings"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "BoostedNew",
+            "href": "https://dappradar.com/rankings/boosted"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Chains",
+            "href": "https://dappradar.com/rankings/chains"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "NFTs",
+            "href": "https://dappradar.com/rankings/nft/collections"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Marketplaces",
+            "href": "https://dappradar.com/rankings/nft/marketplaces"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Tokens",
+            "href": "https://dappradar.com/rankings/tokens"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Season 2",
+            "href": "https://dappradar.com/rewards"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Quests",
+            "href": "https://dappradar.com/rewards/quests"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "AirdropsNew",
+            "href": "https://dappradar.com/rewards/airdrops"
+          },
+          {
+            "selector": "a.sc-lbVpMG",
+            "text": "PortfolioNew",
+            "href": "https://dappradar.com/portfolio"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Token overview",
+            "href": "https://dappradar.com/radar/overview"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Get RADAR",
+            "href": "https://dappradar.com/radar/get-radar"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Staking",
+            "href": "https://dappradar.com/radar/staking"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Resources",
+            "href": "https://dappradar.com/radar/resources"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Chain trends",
+            "href": "https://dappradar.com/research/chain-trends"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Market sectors",
+            "href": "https://dappradar.com/research/market-sectors"
+          },
+          {
+            "selector": "a.sc-gScZFl",
+            "text": "Reports",
+            "href": "https://dappradar.com/reports"
+          },
+          {
+            "selector": ".gZIPIO",
+            "text": "List a project",
+            "href": "https://dappradar.com/dashboard/submit-dapp"
+          },
+          {
+            "selector": "a.sc-lbVpMG",
+            "text": "Hivemind AI",
+            "href": "https://dappradar.com/hivemind-ai"
+          },
+          {
+            "selector": "a.sc-jfTVlA",
+            "text": "Upgrade to PRO",
+            "href": "https://dappradar.com/account/pro-membership"
+          },
+          {
+            "selector": "a.sc-jfTVlA",
+            "text": "Boosting",
+            "href": "https://dappradar.com/boosting"
+          },
+          {
+            "selector": "a.sc-jfTVlA",
+            "text": "Advertise",
+            "href": "https://dappradar.com/advertise"
+          },
+          {
+            "selector": "a.sc-jfTVlA",
+            "text": "API",
+            "href": "https://dappradar.com/api"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Rankings",
+            "href": "https://dappradar.com/rankings"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Quests",
+            "href": "https://dappradar.com/rewards/quests"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Airdrops",
+            "href": "https://dappradar.com/rewards/airdrops"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Hot contracts",
+            "href": "https://dappradar.com/rankings/hot-contracts"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Games",
+            "href": "https://dappradar.com/rankings/games"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Chains",
+            "href": "https://dappradar.com/rankings/chains"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Alerts",
+            "href": "https://dappradar.com/account/alerts"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Portfolio",
+            "href": "https://dappradar.com/portfolio"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "About us",
+            "href": "https://dappradar.com/about-us"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Press",
+            "href": "https://dappradar.com/press"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Disclaimer",
+            "href": "https://dappradar.com/disclaimer"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Privacy policy",
+            "href": "https://dappradar.com/privacy-policy"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Terms of use",
+            "href": "https://dappradar.com/terms"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Bug bounty",
+            "href": "https://dappradar.com/bug-bounty"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Careers",
+            "href": "https://dappradar.com/careers"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Blog",
+            "href": "https://dappradar.com/blog/"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Reports",
+            "href": "https://dappradar.com/reports"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "DappRadar API",
+            "href": "https://dappradar.com/api"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Boosting",
+            "href": "https://dappradar.com/boosting/overview"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Brand Assets",
+            "href": "https://go.dappradar.com/brandassets"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "FAQ",
+            "href": "https://docs.dappradar.com/"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "DappLaunch",
+            "href": "https://dapplaunch.dappradar.com/"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Submit a project",
+            "href": "https://dappradar.com/submit-dapp"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Submit a quest",
+            "href": "https://dappradar.com/rewards/quests/my-quests"
+          },
+          {
+            "selector": "a.sc-eQVdPn",
+            "text": "Advertise",
+            "href": "https://dappradar.com/advertise"
+          }
+        ],
+        "content": [],
+        "data": [
+          {
+            "selector": "li",
+            "type": "list-item",
+            "text": "Rankings"
+          },
+          {
+            "selector": "li",
+            "type": "list-item",
+            "text": "Quests"
+          },
+          {
+            "selector": "li",
+            "type": "list-item",
+            "text": "Airdrops"
+          },
+          {
+            "selector": "li",
+            "type": "list-item",
+            "text": "Hot contracts"
+          },
+          {
+            "selector": "li",
+            "type": "list-item",
+            "text": "Games"
+          }
+        ],
+        "pagination": [],
+        "search": []
+      },
+      "dataPatterns": {
+        "lists": [
+          {
+            "selector": "ul.sc-iOdfRm",
+            "itemCount": 8,
+            "itemSelector": "ul.sc-iOdfRm li",
+            "sampleContent": [
+              "Rankings",
+              "Quests",
+              "Airdrops"
+            ]
+          },
+          {
+            "selector": "ul.sc-iOdfRm",
+            "itemCount": 7,
+            "itemSelector": "ul.sc-iOdfRm li",
+            "sampleContent": [
+              "About us",
+              "Press",
+              "Disclaimer"
+            ]
+          },
+          {
+            "selector": "ul.sc-iOdfRm",
+            "itemCount": 7,
+            "itemSelector": "ul.sc-iOdfRm li",
+            "sampleContent": [
+              "Blog",
+              "Reports",
+              "DappRadar API"
+            ]
+          },
+          {
+            "selector": "ul.sc-iOdfRm",
+            "itemCount": 3,
+            "itemSelector": "ul.sc-iOdfRm li",
+            "sampleContent": [
+              "Submit a project",
+              "Submit a quest",
+              "Advertise"
+            ]
+          }
+        ],
+        "tables": [],
+        "cards": [],
+        "repeated": []
+      },
+      "navigationFlow": {
+        "mainMenu": [
+          {
+            "text": ".cls-1{fill:#fff;stroke-width:0}",
+            "href": "https://dappradar.com/",
+            "isExternal": false
+          },
+          {
+            "text": "List a project",
+            "href": "https://dappradar.com/dashboard/submit-dapp",
+            "isExternal": false
+          },
+          {
+            "text": "Get RADAR",
+            "href": "https://dappradar.com/radar/get-radar",
+            "isExternal": false
+          },
+          {
+            "text": "Token overview",
+            "href": "https://dappradar.com/radar/overview",
+            "isExternal": false
+          },
+          {
+            "text": "Staking",
+            "href": "https://dappradar.com/radar/staking",
+            "isExternal": false
+          },
+          {
+            "text": "Resources",
+            "href": "https://dappradar.com/radar/resources",
+            "isExternal": false
+          },
+          {
+            "text": "Level up with DappRadarGo PRO",
+            "href": "https://dappradar.com/account/pro-membership",
+            "isExternal": false
+          },
+          {
+            "text": "Portfolio--",
+            "href": "https://dappradar.com/portfolio",
+            "isExternal": false
+          },
+          {
+            "text": "My profileLevel 0 XP to next level",
+            "href": "https://dappradar.com/account/profile",
+            "isExternal": false
+          },
+          {
+            "text": "My Boosting Power (BP)-",
+            "href": "https://dappradar.com/boosting",
+            "isExternal": false
+          },
+          {
+            "text": "Buy Crypto",
+            "href": "https://global.transak.com/?apiKey=05a2e21e-7e26-46c4-925c-d7ad33882817",
+            "isExternal": true
+          },
+          {
+            "text": "Swap & bridge cross-chain",
+            "href": "https://dappradar.com/token-swap",
+            "isExternal": false
+          },
+          {
+            "text": "PRO membership",
+            "href": "https://dappradar.com/account/pro-membership",
+            "isExternal": false
+          },
+          {
+            "text": "Alerts",
+            "href": "https://dappradar.com/account/alerts",
+            "isExternal": false
+          },
+          {
+            "text": "Home",
+            "href": "https://dappradar.com/",
+            "isExternal": false
+          },
+          {
+            "text": "Hot contractsNew",
+            "href": "https://dappradar.com/rankings/hot-contracts",
+            "isExternal": false
+          },
+          {
+            "text": "Web3 ecosystem",
+            "href": "https://dappradar.com/web3-ecosystem",
+            "isExternal": false
+          },
+          {
+            "text": "Upcoming",
+            "href": "https://dappradar.com/rankings/upcoming",
+            "isExternal": false
+          },
+          {
+            "text": "Gaming",
+            "href": "https://dappradar.com/narratives/gaming",
+            "isExternal": false
+          },
+          {
+            "text": "DeFi",
+            "href": "https://dappradar.com/narratives/defi",
+            "isExternal": false
+          },
+          {
+            "text": "AI x Crypto",
+            "href": "https://dappradar.com/narratives/ai",
+            "isExternal": false
+          },
+          {
+            "text": "Virtuals Genesis",
+            "href": "https://dappradar.com/narratives/virtuals-genesis",
+            "isExternal": false
+          },
+          {
+            "text": "Gambling",
+            "href": "https://dappradar.com/narratives/gambling",
+            "isExternal": false
+          },
+          {
+            "text": "Real-world Assets",
+            "href": "https://dappradar.com/narratives/rwa",
+            "isExternal": false
+          },
+          {
+            "text": "Social",
+            "href": "https://dappradar.com/rankings/social",
+            "isExternal": false
+          },
+          {
+            "text": "High-risk",
+            "href": "https://dappradar.com/rankings/high-risk",
+            "isExternal": false
+          },
+          {
+            "text": "Global",
+            "href": "https://dappradar.com/rankings",
+            "isExternal": false
+          },
+          {
+            "text": "BoostedNew",
+            "href": "https://dappradar.com/rankings/boosted",
+            "isExternal": false
+          },
+          {
+            "text": "Chains",
+            "href": "https://dappradar.com/rankings/chains",
+            "isExternal": false
+          },
+          {
+            "text": "NFTs",
+            "href": "https://dappradar.com/rankings/nft/collections",
+            "isExternal": false
+          },
+          {
+            "text": "Marketplaces",
+            "href": "https://dappradar.com/rankings/nft/marketplaces",
+            "isExternal": false
+          },
+          {
+            "text": "Tokens",
+            "href": "https://dappradar.com/rankings/tokens",
+            "isExternal": false
+          },
+          {
+            "text": "Season 2",
+            "href": "https://dappradar.com/rewards",
+            "isExternal": false
+          },
+          {
+            "text": "Quests",
+            "href": "https://dappradar.com/rewards/quests",
+            "isExternal": false
+          },
+          {
+            "text": "AirdropsNew",
+            "href": "https://dappradar.com/rewards/airdrops",
+            "isExternal": false
+          },
+          {
+            "text": "PortfolioNew",
+            "href": "https://dappradar.com/portfolio",
+            "isExternal": false
+          },
+          {
+            "text": "Token overview",
+            "href": "https://dappradar.com/radar/overview",
+            "isExternal": false
+          },
+          {
+            "text": "Get RADAR",
+            "href": "https://dappradar.com/radar/get-radar",
+            "isExternal": false
+          },
+          {
+            "text": "Staking",
+            "href": "https://dappradar.com/radar/staking",
+            "isExternal": false
+          },
+          {
+            "text": "Resources",
+            "href": "https://dappradar.com/radar/resources",
+            "isExternal": false
+          },
+          {
+            "text": "Chain trends",
+            "href": "https://dappradar.com/research/chain-trends",
+            "isExternal": false
+          },
+          {
+            "text": "Market sectors",
+            "href": "https://dappradar.com/research/market-sectors",
+            "isExternal": false
+          },
+          {
+            "text": "Reports",
+            "href": "https://dappradar.com/reports",
+            "isExternal": false
+          },
+          {
+            "text": "List a project",
+            "href": "https://dappradar.com/dashboard/submit-dapp",
+            "isExternal": false
+          },
+          {
+            "text": "Hivemind AI",
+            "href": "https://dappradar.com/hivemind-ai",
+            "isExternal": false
+          },
+          {
+            "text": "Upgrade to PRO",
+            "href": "https://dappradar.com/account/pro-membership",
+            "isExternal": false
+          },
+          {
+            "text": "Boosting",
+            "href": "https://dappradar.com/boosting",
+            "isExternal": false
+          },
+          {
+            "text": "Advertise",
+            "href": "https://dappradar.com/advertise",
+            "isExternal": false
+          },
+          {
+            "text": "API",
+            "href": "https://dappradar.com/api",
+            "isExternal": false
+          },
+          {
+            "text": "Rankings",
+            "href": "https://dappradar.com/rankings",
+            "isExternal": false
+          },
+          {
+            "text": "Quests",
+            "href": "https://dappradar.com/rewards/quests",
+            "isExternal": false
+          },
+          {
+            "text": "Airdrops",
+            "href": "https://dappradar.com/rewards/airdrops",
+            "isExternal": false
+          },
+          {
+            "text": "Hot contracts",
+            "href": "https://dappradar.com/rankings/hot-contracts",
+            "isExternal": false
+          },
+          {
+            "text": "Games",
+            "href": "https://dappradar.com/rankings/games",
+            "isExternal": false
+          },
+          {
+            "text": "Chains",
+            "href": "https://dappradar.com/rankings/chains",
+            "isExternal": false
+          },
+          {
+            "text": "Alerts",
+            "href": "https://dappradar.com/account/alerts",
+            "isExternal": false
+          },
+          {
+            "text": "Portfolio",
+            "href": "https://dappradar.com/portfolio",
+            "isExternal": false
+          },
+          {
+            "text": "About us",
+            "href": "https://dappradar.com/about-us",
+            "isExternal": false
+          },
+          {
+            "text": "Press",
+            "href": "https://dappradar.com/press",
+            "isExternal": false
+          },
+          {
+            "text": "Disclaimer",
+            "href": "https://dappradar.com/disclaimer",
+            "isExternal": false
+          },
+          {
+            "text": "Privacy policy",
+            "href": "https://dappradar.com/privacy-policy",
+            "isExternal": false
+          },
+          {
+            "text": "Terms of use",
+            "href": "https://dappradar.com/terms",
+            "isExternal": false
+          },
+          {
+            "text": "Bug bounty",
+            "href": "https://dappradar.com/bug-bounty",
+            "isExternal": false
+          },
+          {
+            "text": "Careers",
+            "href": "https://dappradar.com/careers",
+            "isExternal": false
+          },
+          {
+            "text": "Blog",
+            "href": "https://dappradar.com/blog/",
+            "isExternal": false
+          },
+          {
+            "text": "Reports",
+            "href": "https://dappradar.com/reports",
+            "isExternal": false
+          },
+          {
+            "text": "DappRadar API",
+            "href": "https://dappradar.com/api",
+            "isExternal": false
+          },
+          {
+            "text": "Boosting",
+            "href": "https://dappradar.com/boosting/overview",
+            "isExternal": false
+          },
+          {
+            "text": "Brand Assets",
+            "href": "https://go.dappradar.com/brandassets",
+            "isExternal": false
+          },
+          {
+            "text": "FAQ",
+            "href": "https://docs.dappradar.com/",
+            "isExternal": false
+          },
+          {
+            "text": "DappLaunch",
+            "href": "https://dapplaunch.dappradar.com/",
+            "isExternal": false
+          },
+          {
+            "text": "Submit a project",
+            "href": "https://dappradar.com/submit-dapp",
+            "isExternal": false
+          },
+          {
+            "text": "Submit a quest",
+            "href": "https://dappradar.com/rewards/quests/my-quests",
+            "isExternal": false
+          },
+          {
+            "text": "Advertise",
+            "href": "https://dappradar.com/advertise",
+            "isExternal": false
+          }
+        ],
+        "breadcrumbs": [],
+        "footer": [
+          {
+            "text": "Privacy Policy",
+            "href": "https://dappradar.com/privacy-policy"
+          },
+          {
+            "text": "",
+            "href": "https://facebook.com/dappradar"
+          },
+          {
+            "text": "",
+            "href": "https://discord.gg/4ybbssrHkm"
+          },
+          {
+            "text": "",
+            "href": "https://www.reddit.com/domain/dappradar.com"
+          },
+          {
+            "text": "",
+            "href": "https://t.me/joinchat/GdhNjQ8PMhCZ_a0CZutmXg"
+          },
+          {
+            "text": "",
+            "href": "https://www.youtube.com/c/DappRadar"
+          },
+          {
+            "text": "instagram",
+            "href": "https://www.instagram.com/dappradar/"
+          },
+          {
+            "text": "",
+            "href": "https://www.tiktok.com/@dappradar"
+          },
+          {
+            "text": "",
+            "href": "https://dappradar.app.link/ios"
+          },
+          {
+            "text": "",
+            "href": "https://dappradar.app.link/googleplay"
+          },
+          {
+            "text": "Rankings",
+            "href": "https://dappradar.com/rankings"
+          },
+          {
+            "text": "Quests",
+            "href": "https://dappradar.com/rewards/quests"
+          },
+          {
+            "text": "Airdrops",
+            "href": "https://dappradar.com/rewards/airdrops"
+          },
+          {
+            "text": "Hot contracts",
+            "href": "https://dappradar.com/rankings/hot-contracts"
+          },
+          {
+            "text": "Games",
+            "href": "https://dappradar.com/rankings/games"
+          },
+          {
+            "text": "Chains",
+            "href": "https://dappradar.com/rankings/chains"
+          },
+          {
+            "text": "Alerts",
+            "href": "https://dappradar.com/account/alerts"
+          },
+          {
+            "text": "Portfolio",
+            "href": "https://dappradar.com/portfolio"
+          },
+          {
+            "text": "About us",
+            "href": "https://dappradar.com/about-us"
+          },
+          {
+            "text": "Press",
+            "href": "https://dappradar.com/press"
+          },
+          {
+            "text": "Disclaimer",
+            "href": "https://dappradar.com/disclaimer"
+          },
+          {
+            "text": "Privacy policy",
+            "href": "https://dappradar.com/privacy-policy"
+          },
+          {
+            "text": "Terms of use",
+            "href": "https://dappradar.com/terms"
+          },
+          {
+            "text": "Bug bounty",
+            "href": "https://dappradar.com/bug-bounty"
+          },
+          {
+            "text": "Careers",
+            "href": "https://dappradar.com/careers"
+          },
+          {
+            "text": "Blog",
+            "href": "https://dappradar.com/blog/"
+          },
+          {
+            "text": "Reports",
+            "href": "https://dappradar.com/reports"
+          },
+          {
+            "text": "DappRadar API",
+            "href": "https://dappradar.com/api"
+          },
+          {
+            "text": "Boosting",
+            "href": "https://dappradar.com/boosting/overview"
+          },
+          {
+            "text": "Brand Assets",
+            "href": "https://go.dappradar.com/brandassets"
+          },
+          {
+            "text": "FAQ",
+            "href": "https://docs.dappradar.com/"
+          },
+          {
+            "text": "DappLaunch",
+            "href": "https://dapplaunch.dappradar.com/"
+          },
+          {
+            "text": "Submit a project",
+            "href": "https://dappradar.com/submit-dapp"
+          },
+          {
+            "text": "Submit a quest",
+            "href": "https://dappradar.com/rewards/quests/my-quests"
+          },
+          {
+            "text": "Advertise",
+            "href": "https://dappradar.com/advertise"
+          },
+          {
+            "text": "",
+            "href": "https://cryptocompare.com/?utm_source=DappRadar"
+          },
+          {
+            "text": "",
+            "href": "https://coingecko.com/?utm_source=DappRadar"
+          }
+        ],
+        "sidebar": []
+      },
+      "contentStructure": {
+        "headings": [
+          {
+            "level": 2,
+            "text": "Trending projects",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Community favorites",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Latest quests",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Spend the Yield on Swype.fun | Powered by B...",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Explore DappRadar's 21st Cycle Winning Dapp...",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Explore Ain Finance",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Swap with SafeBlock — $1,000 in Prizes!",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "July Quest Drop: Feel the Heat at CryptoCas...",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "MEME FIGHTER PRESENTS: THE sMOFO TOURNAMENT",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "RedotPay Social Quest",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Abstract Unlocked: Learn About the New Bloc...",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Discover the ZetaChain ecosystem",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Explore the Blast ecosystem",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Aptos Chain Discovery",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Optimism Discovery Tour",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Signals",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "New projects",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 2,
+            "text": "Market overview",
+            "selector": "h2.sc-jRWcDx"
+          },
+          {
+            "level": 3,
+            "text": "Try DappRadar on the go",
+            "selector": ".sc-bkldj"
+          },
+          {
+            "level": 5,
+            "text": "Products",
+            "selector": "h5.sc-izDtrv"
+          }
+        ],
+        "contentBlocks": [
+          {
+            "selector": "section.sc-kdHeGy",
+            "wordCount": 95,
+            "hasImages": 12,
+            "hasLinks": 49,
+            "type": "section"
+          },
+          {
+            "selector": "section.sc-kdHeGy",
+            "wordCount": 1153,
+            "hasImages": 116,
+            "hasLinks": 185,
+            "type": "section"
+          },
+          {
+            "selector": ".sc-jpRhJR",
+            "wordCount": 50,
+            "hasImages": 0,
+            "hasLinks": 0,
+            "type": "section"
+          },
+          {
+            "selector": ".sc-qVkRw",
+            "wordCount": 10,
+            "hasImages": 3,
+            "hasLinks": 2,
+            "type": "section"
+          },
+          {
+            "selector": "section.sc-bDVJcy",
+            "wordCount": 31,
+            "hasImages": 6,
+            "hasLinks": 12,
+            "type": "section"
+          },
+          {
+            "selector": "section.sc-bDVJcy",
+            "wordCount": 19,
+            "hasImages": 10,
+            "hasLinks": 4,
+            "type": "section"
+          },
+          {
+            "selector": "section.sc-bDVJcy",
+            "wordCount": 109,
+            "hasImages": 23,
+            "hasLinks": 16,
+            "type": "section"
+          },
+          {
+            "selector": "section.sc-bDVJcy",
+            "wordCount": 791,
+            "hasImages": 57,
+            "hasLinks": 102,
+            "type": "section"
+          },
+          {
+            "selector": "section.sc-bDVJcy",
+            "wordCount": 47,
+            "hasImages": 12,
+            "hasLinks": 13,
+            "type": "section"
+          },
+          {
+            "selector": "section.sc-bDVJcy",
+            "wordCount": 57,
+            "hasImages": 1,
+            "hasLinks": 1,
+            "type": "section"
+          }
+        ],
+        "mediaElements": {
+          "images": {
+            "total": 135,
+            "withAlt": 99,
+            "lazyLoaded": 0
+          },
+          "videos": {
+            "total": 0,
+            "embedded": 0
+          }
+        },
+        "interactiveElements": {
+          "buttons": 57,
+          "forms": 2,
+          "inputs": 7,
+          "clickableElements": 0
+        }
+      }
+    },
+    "technicalStack": {
+      "detectedFrameworks": [],
+      "libraries": [],
+      "buildTools": [],
+      "cssFrameworks": []
+    },
+    "interactionPoints": {
+      "forms": [
+        {
+          "id": "",
+          "action": "https://dappradar.com/",
+          "method": "get",
+          "fields": [
+            {
+              "name": "email",
+              "type": "email",
+              "required": true,
+              "placeholder": "Your email"
+            },
+            {
+              "name": "",
+              "type": "submit"
+            },
+            {
+              "name": "",
+              "type": "checkbox",
+              "required": true,
+              "placeholder": ""
+            }
+          ],
+          "purpose": "newsletter/contact"
+        },
+        {
+          "id": "",
+          "action": "https://dappradar.com/",
+          "method": "get",
+          "fields": [
+            {
+              "name": "email",
+              "type": "email",
+              "required": true,
+              "placeholder": "Your email"
+            },
+            {
+              "name": "",
+              "type": "submit"
+            },
+            {
+              "name": "",
+              "type": "checkbox",
+              "required": true,
+              "placeholder": ""
+            }
+          ],
+          "purpose": "newsletter/contact"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Connect",
+          "selector": ".jCnBPY",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Connect",
+          "selector": ".KdCfK",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Connect",
+          "selector": ".UehcP",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Log out",
+          "selector": "button.sc-dkrFOg",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": ".sc-gYpcnp",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Explore Web3",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Trending now",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Rankings",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Rewards",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "$RADAR",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Research",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Explore Web3",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Trending now",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Rankings",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Rewards",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "$RADAR",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Research",
+          "selector": "button.sc-lbVpMG",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": "button.sc-dkrFOg",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": "button.sc-dkrFOg",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "50 Access Code to ...",
+          "selector": "button.sc-dkrFOg",
+          "type": "button",
+          "onclick": false,
+          "formAssociated": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Search dapps",
+          "required": false,
+          "selector": "input.input"
+        },
+        {
+          "type": "textarea",
+          "name": "g-recaptcha-response",
+          "placeholder": "",
+          "required": false,
+          "selector": "#g-recaptcha-response-0989x062h4ig"
+        },
+        {
+          "type": "textarea",
+          "name": "h-captcha-response",
+          "placeholder": "",
+          "required": false,
+          "selector": "#h-captcha-response-0989x062h4ig"
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "placeholder": "Your email",
+          "required": true,
+          "selector": "#email"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": true,
+          "selector": "#yDRRT"
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "placeholder": "Your email",
+          "required": true,
+          "selector": "#email"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": true,
+          "selector": "#DRz5J"
+        }
+      ],
+      "dataSubmission": {
+        "forms": 2,
+        "ajaxForms": 0,
+        "fileUploads": 0,
+        "hiddenFields": 0
+      }
+    },
+    "contentAnalysis": {
+      "dataStructure": {
+        "jsonData": [],
+        "structuredData": [],
+        "apiCalls": [],
+        "dataAttributes": {
+          "data-react-helmet": 15,
+          "data-styled": 2,
+          "data-styled-version": 2,
+          "data-name": 4,
+          "data-comp-name": 433,
+          "data-hcaptcha-widget-id": 1,
+          "data-hcaptcha-response": 1,
+          "data-account": 1,
+          "data-api": 1,
+          "data-user": 1
+        }
+      },
+      "contentPatterns": {
+        "repeatingElements": [],
+        "contentTypes": {
+          "articles": 0,
+          "blogs": 0,
+          "products": 0,
+          "news": 0
+        },
+        "navigationPatterns": {
+          "mainNav": 2,
+          "breadcrumbs": 0,
+          "pagination": 0,
+          "sidebar": 0
+        }
+      },
+      "listItems": [
+        {
+          "type": "ul",
+          "selector": "ul.sc-iOdfRm",
+          "itemCount": 8,
+          "nested": false,
+          "sampleItems": [
+            "Rankings",
+            "Quests",
+            "Airdrops"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.sc-iOdfRm",
+          "itemCount": 7,
+          "nested": false,
+          "sampleItems": [
+            "About us",
+            "Press",
+            "Disclaimer"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.sc-iOdfRm",
+          "itemCount": 7,
+          "nested": false,
+          "sampleItems": [
+            "Blog",
+            "Reports",
+            "DappRadar API"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul.sc-iOdfRm",
+          "itemCount": 3,
+          "nested": false,
+          "sampleItems": [
+            "Submit a project",
+            "Submit a quest",
+            "Advertise"
+          ]
+        }
+      ],
+      "tables": [],
+      "textPatterns": {
+        "wordCount": 1365,
+        "avgWordsPerSentence": 0.19,
+        "hasPhone": false,
+        "hasEmail": false,
+        "hasPrice": true,
+        "hasDate": false
+      }
+    },
+    "performanceInsights": {
+      "loadingPatterns": {
+        "lazyImages": 0,
+        "asyncScripts": 11,
+        "deferScripts": 2,
+        "preloadLinks": 0
+      },
+      "assetOptimization": {
+        "minifiedScripts": 2,
+        "webpImages": 2,
+        "compressedAssets": 0
+      },
+      "renderingStrategy": {
+        "isCSR": false,
+        "hasSSR": null,
+        "hasStaticGeneration": false
+      },
+      "bottlenecks": [
+        "Many images (135) - consider lazy loading",
+        "Large DOM size - may impact performance"
+      ]
+    },
+    "metadata": {
+      "url": "https://dappradar.com/",
+      "title": "DappRadar - Discover Dapps, NFTs, Games, Tokens, and Airdrops",
+      "viewport": {
+        "width": 1920,
+        "height": 945,
+        "devicePixelRatio": 1
+      },
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "language": "en-US",
+      "timestamp": 1753751972017,
+      "buildTools": [],
+      "environment": "production"
+    },
+    "architecture": {
+      "isModular": {
+        "hasModules": true,
+        "hasImportMaps": false,
+        "hasDynamicImports": false,
+        "moduleCount": 1
+      },
+      "bundleStrategy": [],
+      "loadingStrategy": [
+        "defer",
+        "async"
+      ],
+      "componentArchitecture": "Component-based (Angular)",
+      "codeStructure": {
+        "totalScripts": 16,
+        "externalScripts": 14,
+        "inlineScripts": 2,
+        "stylesheets": 8,
+        "moduleScripts": 1
+      }
+    },
+    "frameworks": [
+      {
+        "name": "React",
+        "version": "unknown",
+        "components": {
+          "rootElements": 0,
+          "fiberNodes": 0,
+          "components": []
+        },
+        "hooks": false,
+        "context": false,
+        "router": false,
+        "detected": true,
+        "indicators": {
+          "windowReact": false,
+          "reactRoot": false,
+          "reactHelmet": true,
+          "reactInSource": false,
+          "reactDevTools": false,
+          "reactFiber": false,
+          "reactBundle": true,
+          "reactDom": false,
+          "jsxInSource": false,
+          "reactScripts": false
+        }
+      },
+      {
+        "name": "Angular",
+        "version": "unknown",
+        "components": {
+          "components": 1
+        },
+        "services": 0,
+        "router": null,
+        "detected": true
+      }
+    ],
+    "authentication": {
+      "type": "Session, API Key, Cookie Authentication",
+      "mechanisms": [
+        "Session",
+        "API Key",
+        "Cookie Authentication"
+      ],
+      "flows": [
+        "Cookie-based sessions"
+      ],
+      "storage": [],
+      "providers": [],
+      "indicators": {
+        "sessions": {
+          "detected": true,
+          "flows": [
+            "Cookie-based sessions"
+          ]
+        },
+        "apiKeys": [
+          "API key detected in script"
+        ],
+        "cookies": [
+          {
+            "name": "notification-session-identifier",
+            "hasValue": true,
+            "length": 36
+          },
+          {
+            "name": "dr_session",
+            "hasValue": true,
+            "length": 188
+          }
+        ]
+      }
+    },
+    "debug": {
+      "networkRequestsCount": 0,
+      "scriptsCount": 16,
+      "elementsCount": 3387,
+      "hasReact": false,
+      "hasVue": false,
+      "hasAngular": false,
+      "timestamp": 1753751972238,
+      "pageContent": {
+        "title": "DappRadar - Discover Dapps, NFTs, Games, Tokens, and Airdrops",
+        "bodyLength": 351579,
+        "scriptSources": [
+          "https://script.crazyegg.com/pages/versioned/tracking-scripts/dd627f68ac2636071d1a4fa436c81308.js",
+          "https://script.crazyegg.com/pages/versioned/common-scripts/73101d2d57c32996c9a260091a314aca.js",
+          "https://script.crazyegg.com/pages/scripts/0124/3132.js",
+          "https://t.contentsquare.net/uxa/50b546bc8cd90.js",
+          "https://www.redditstatic.com/ads/pixel.js",
+          "https://www.googletagmanager.com/gtm.js?id=GTM-MQ2WK96&l=TagManagerDataLayer&gtm_auth=&gtm_preview=&gtm_cookies_win=x",
+          "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs",
+          "https://static.dappradar.com/website-fe-pr/static/js/main.b6eb530e.js",
+          "https://js.hcaptcha.com/1/api.js?render=explicit&onload=hcaptchaOnLoad&0=assethost%2C&1=endpoint%2C&2=hl%2C&3=host%2C&4=imghost%2C&5=recaptchacompat%2C&6=reportapi%2C&7=sentry%2C&8=custom%2C",
+          "https://snippet.maze.co/maze-universal-loader.js?t=1753751720605&apiKey=4b2c1c27-b3d6-4a37-be29-f5dea41b481d"
+        ],
+        "classNames": [
+          "sc-cxdZMj",
+          "eUPyWd",
+          "App",
+          "lang-en",
+          "sc-OqIKm",
+          "ePZMRm",
+          "sc-QCRGo",
+          "PVuft",
+          "sc-eGXPLf",
+          "bTRpcA",
+          "sc-fmuwQx",
+          "jjTPoP",
+          "Container",
+          "sc-inRRxd",
+          "jbxwQI",
+          "sc-kdHeGy",
+          "sc-cvfwTA",
+          "UMsgy",
+          "hrGcUm",
+          "sc-iBqIpo"
+        ],
+        "windowGlobals": []
+      }
+    },
+    "pageAnalysis": {
+      "totalScripts": 16,
+      "externalScripts": 14,
+      "inlineScripts": 2,
+      "totalStyles": 13,
+      "totalImages": 135,
+      "totalForms": 2,
+      "totalLinks": 271,
+      "hasServiceWorker": true,
+      "hasLocalStorage": true,
+      "hasWebGL": true,
+      "hasWebAssembly": true,
+      "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+      "charset": "UTF-8",
+      "doctype": "html"
+    }
+  },
+  "developerInsights": [],
+  "scrapingStrategy": {},
+  "performance": {},
+  "security": {},
+  "frameworks": [
+    {
+      "name": "React",
+      "version": "unknown",
+      "components": {
+        "rootElements": 0,
+        "fiberNodes": 0,
+        "components": []
+      },
+      "hooks": false,
+      "context": false,
+      "router": false,
+      "detected": true,
+      "indicators": {
+        "windowReact": false,
+        "reactRoot": false,
+        "reactHelmet": true,
+        "reactInSource": false,
+        "reactDevTools": false,
+        "reactFiber": false,
+        "reactBundle": true,
+        "reactDom": false,
+        "jsxInSource": false,
+        "reactScripts": false
+      }
+    },
+    {
+      "name": "Angular",
+      "version": "unknown",
+      "components": {
+        "components": 1
+      },
+      "services": 0,
+      "router": null,
+      "detected": true
+    }
+  ],
+  "apiEndpoints": {},
+  "codeExamples": {}
+}

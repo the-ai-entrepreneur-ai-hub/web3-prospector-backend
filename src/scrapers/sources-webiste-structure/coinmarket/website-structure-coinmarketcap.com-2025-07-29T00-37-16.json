@@ -1,0 +1,1514 @@
+{
+  "extractionInfo": {
+    "timestamp": 1753749436854,
+    "url": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+    "domain": "coinmarketcap.com",
+    "extractedAt": "2025-07-29T00:37:16.854Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+  },
+  "advancedAnalysis": {
+    "scrapingIntelligence": {
+      "difficulty": {
+        "level": "VERY HARD",
+        "score": 10,
+        "factors": [
+          "Heavy JavaScript usage (41 scripts)",
+          "Dynamic data loading detected",
+          "Anti-bot protection detected"
+        ],
+        "recommendation": "Use headless browser (Puppeteer/Playwright) with stealth plugins, implement delays, rotate user agents"
+      },
+      "strategy": {
+        "difficulty": "hard",
+        "approach": "dynamic",
+        "requirements": [
+          "JavaScript rendering",
+          "Authentication handling"
+        ],
+        "recommendations": [
+          {
+            "type": "framework",
+            "message": "SPA detected - use browser automation for dynamic content",
+            "tools": [
+              "Puppeteer",
+              "Playwright",
+              "Selenium"
+            ],
+            "waitStrategies": [
+              "networkidle",
+              "element selectors",
+              "custom conditions"
+            ]
+          },
+          {
+            "type": "authentication",
+            "message": "Authentication required - implement session management",
+            "strategies": [
+              "Cookie session management"
+            ],
+            "considerations": [
+              "CSRF tokens",
+              "Rate limiting",
+              "Session expiry"
+            ]
+          }
+        ],
+        "codeExamples": {
+          "puppeteer": "\nconst puppeteer = require('puppeteer');\n\n(async () => {\n  const browser = await puppeteer.launch({ headless: false });\n  const page = await browser.newPage();\n  \n  // Set viewport for consistent rendering\n  await page.setViewport({ width: 1920, height: 1080 });\n  \n  // Navigate to page\n  await page.goto('https://coinmarketcap.com/currencies/dowge-ethereum/', { \n    waitUntil: 'networkidle0' // Wait for SPA to load\n  });\n  \n  \n  \n  // Wait for specific elements (adjust selectors based on your needs)\n  await page.waitForSelector('[data-testid=\"main-content\"]', { timeout: 30000 });\n  \n  // Extract data\n  const data = await page.evaluate(() => {\n    // Your extraction logic here\n    return document.title;\n  });\n  \n  console.log(data);\n  await browser.close();\n})();"
+        }
+      },
+      "keySelectors": {
+        "navigation": [],
+        "content": [],
+        "data": [
+          {
+            "selector": "li.Tab_base__W83LS",
+            "type": "list-item",
+            "text": "PricePrice"
+          },
+          {
+            "selector": "li.Tab_base__W83LS",
+            "type": "list-item",
+            "text": "Market capMarket cap"
+          },
+          {
+            "selector": "li.Tab_base__W83LS",
+            "type": "list-item",
+            "text": ""
+          },
+          {
+            "selector": "li.Tab_base__W83LS",
+            "type": "list-item",
+            "text": ""
+          },
+          {
+            "selector": "[data-index=\"tab-0\"]",
+            "type": "list-item",
+            "text": "1D1D"
+          }
+        ],
+        "pagination": [
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/d07435e8a864b5f8.css"
+          },
+          {
+            "selector": "[data-n-g=\"\"]",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/d07435e8a864b5f8.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/335f727d3366fa3a.css"
+          },
+          {
+            "selector": "[data-n-p=\"\"]",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/335f727d3366fa3a.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/cb6153bdeece11d3.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/ffe4f6673e225f97.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/e7deac44e33b2b8a.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/5659e289a24bbcda.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/ba927f4bd4ebc76f.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/chunks/20871.8824af27eae059b4.js"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/chunks/sentry-module.3faa3196f09411aa.js"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/aac6f4bec3ea99ac.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/4bfed845db498ad9.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/31fa60dde200ea15.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/09f2d2346ec04d34.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/097003c338e5f3d3.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/924487f9ddb64cb5.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/4ac6c285b5dd8b73.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/965adb4aa94cd5cb.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/09d2f3567dbb7a7c.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/365130358567d33a.css"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://securepubads.g.doubleclick.net/pagead/managed/dict/m202507240101/gpt"
+          },
+          {
+            "selector": "link",
+            "text": "",
+            "href": "https://s2.coinmarketcap.com/cmc/_next/static/css/ac8da1db0a080c5a.css"
+          },
+          {
+            "selector": "a.sc-65e7f566-0",
+            "text": "Most Visited",
+            "href": "https://coinmarketcap.com/most-viewed-pages/"
+          },
+          {
+            "selector": "a",
+            "text": "Update Token Info",
+            "href": "https://support.coinmarketcap.com/hc/en-us/articles/16945563933723-CMC-Priority-CMCP-for-page-updates"
+          }
+        ],
+        "search": []
+      },
+      "dataPatterns": {
+        "lists": [
+          {
+            "selector": "ul",
+            "itemCount": 7,
+            "itemSelector": "ul li",
+            "sampleContent": [
+              "1D1D",
+              "7D7D",
+              "1M1M"
+            ]
+          },
+          {
+            "selector": "ul",
+            "itemCount": 3,
+            "itemSelector": "ul li",
+            "sampleContent": [
+              "ALLALL",
+              "CEXCEX",
+              "DEXDEX"
+            ]
+          },
+          {
+            "selector": "ul",
+            "itemCount": 3,
+            "itemSelector": "ul li",
+            "sampleContent": [
+              "SpotSpot",
+              "PerpetualPerpetual",
+              "FuturesFutures"
+            ]
+          },
+          {
+            "selector": "ol",
+            "itemCount": 3,
+            "itemSelector": "ol li",
+            "sampleContent": [
+              "CoinMarketCap",
+              "Tokens",
+              "DOWGE"
+            ]
+          },
+          {
+            "selector": "ul",
+            "itemCount": 14,
+            "itemSelector": "ul li",
+            "sampleContent": [
+              "Academy",
+              "Advertise",
+              "CMC Labs"
+            ]
+          },
+          {
+            "selector": "ul",
+            "itemCount": 9,
+            "itemSelector": "ul li",
+            "sampleContent": [
+              "About us",
+              "Terms of use",
+              "Privacy Policy"
+            ]
+          },
+          {
+            "selector": "ul",
+            "itemCount": 5,
+            "itemSelector": "ul li",
+            "sampleContent": [
+              "Get Listed",
+              "Request Form",
+              "Contact Support"
+            ]
+          },
+          {
+            "selector": "ul",
+            "itemCount": 7,
+            "itemSelector": "ul li",
+            "sampleContent": [
+              "X (Twitter)",
+              "Community",
+              "Telegram"
+            ]
+          }
+        ],
+        "tables": [
+          {
+            "selector": ".sc-db1da501-3",
+            "rowCount": 2,
+            "columnCount": 11,
+            "hasHeader": true,
+            "sampleHeaders": [
+              "#",
+              "Exchange",
+              "Pair",
+              "Price",
+              "+2% Depth",
+              "-2% Depth",
+              "Volume (24h)",
+              "Volume %",
+              "Confidence",
+              "Liquidity score",
+              "Updated"
+            ]
+          },
+          {
+            "selector": ".FilterModal_filter-section__table__9Tz9p",
+            "rowCount": 2,
+            "columnCount": 5,
+            "hasHeader": true,
+            "sampleHeaders": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "selector": "table.Table_table__kjf_L",
+            "rowCount": 11,
+            "columnCount": 3,
+            "hasHeader": true,
+            "sampleHeaders": [
+              "",
+              "",
+              ""
+            ]
+          }
+        ],
+        "cards": [
+          {
+            "selector": "[class*=\"item\"]",
+            "count": 104,
+            "commonStructure": {
+              "hasImages": 67,
+              "hasLinks": 5,
+              "hasPrices": 1,
+              "hasDates": 0,
+              "commonClasses": {
+                "sc-65e7f566-0": 72,
+                "eQBACe": 72,
+                "item-link": 55,
+                "cmc-link": 55,
+                "CoinMetrics_group-item-full__ncOjB": 2,
+                "CoinInfoLinks_info-items-wrapper__dHVKe": 1,
+                "CoinInfoLinks_common-items-wrapper__6phZc": 6,
+                "BasePopover_base__T5yOf": 1,
+                "popover-base": 1,
+                "LongTextDisplay_content-fg__yyqLY": 1,
+                "LongTextDisplay_content-fg-normal__kPRiv": 1,
+                "ContractLinks_contract-display-item-content-wrapper__q14bO": 1,
+                "CmcAiInsights_cdp-ai-insights-items-wrapper__riLgF": 1,
+                "sc-71024e3e-0": 1,
+                "OqPKt": 1,
+                "coin-item-symbol": 1,
+                "avatar-item-bg": 9,
+                "avatar-item-img": 9,
+                "sc-7b9feb7e-0": 14,
+                "jAvUXO": 14,
+                "emoji-list-item": 14,
+                "emoji-list-item-8": 5,
+                "bullish": 7,
+                "emoji-list-item-2": 7,
+                "emoji-list-item-9": 2,
+                "toolbar-item": 1,
+                "emoji": 1,
+                "FilterModal_filter-section__pairs__item__gbpjh": 1,
+                "ot-accordion-layout": 3,
+                "ot-cat-item": 3,
+                "ot-vs-config": 3
+              }
+            }
+          }
+        ],
+        "repeated": []
+      },
+      "navigationFlow": {
+        "mainMenu": [],
+        "breadcrumbs": [],
+        "footer": [
+          {
+            "text": "Academy",
+            "href": "https://coinmarketcap.com/academy/"
+          },
+          {
+            "text": "Advertise",
+            "href": "https://coinmarketcap.com/events/advertise/"
+          },
+          {
+            "text": "CMC Labs",
+            "href": "https://coinmarketcap.com/events/cmc-labs/"
+          },
+          {
+            "text": "CMC Updates",
+            "href": "https://coinmarketcap.com/community/profile/cmc_product_update/"
+          },
+          {
+            "text": "Bitcoin ETFs",
+            "href": "https://coinmarketcap.com/etf/bitcoin/"
+          },
+          {
+            "text": "Crypto API",
+            "href": "https://coinmarketcap.com/api/"
+          },
+          {
+            "text": "DexScan",
+            "href": "https://dex.coinmarketcap.com/networks/ethereum/"
+          },
+          {
+            "text": "Real-World Assets",
+            "href": "https://coinmarketcap.com/real-world-assets/"
+          },
+          {
+            "text": "Global Charts",
+            "href": "https://coinmarketcap.com/charts/"
+          },
+          {
+            "text": "NFT",
+            "href": "https://coinmarketcap.com/nft/"
+          },
+          {
+            "text": "Portfolio",
+            "href": "https://coinmarketcap.com/portfolio-tracker/"
+          },
+          {
+            "text": "Watchlist",
+            "href": "https://coinmarketcap.com/watchlist/"
+          },
+          {
+            "text": "Doodles",
+            "href": "https://coinmarketcap.com/doodles/"
+          },
+          {
+            "text": "Sitemap",
+            "href": "https://coinmarketcap.com/sitemap/currencies/"
+          },
+          {
+            "text": "About us",
+            "href": "https://coinmarketcap.com/about/"
+          },
+          {
+            "text": "Terms of use",
+            "href": "https://coinmarketcap.com/terms/"
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://coinmarketcap.com/privacy/"
+          },
+          {
+            "text": "Cookie preferences",
+            "href": ""
+          },
+          {
+            "text": "Cookie policy",
+            "href": "https://coinmarketcap.com/cookie-policy/"
+          },
+          {
+            "text": "Community Rules",
+            "href": "https://support.coinmarketcap.com/hc/en-us/articles/4412939497755/"
+          },
+          {
+            "text": "Disclaimer",
+            "href": "https://coinmarketcap.com/disclaimer/"
+          },
+          {
+            "text": "Methodology",
+            "href": "https://coinmarketcap.com/methodology/"
+          },
+          {
+            "text": "Careers",
+            "href": "https://coinmarketcap.com/jobs/"
+          },
+          {
+            "text": "Get Listed",
+            "href": "https://support.coinmarketcap.com/hc/en-us/requests/new?ticket_form_id=360000493112"
+          },
+          {
+            "text": "Request Form",
+            "href": "https://coinmarketcap.com/request/"
+          },
+          {
+            "text": "Contact Support",
+            "href": "https://support-chat.coinmarketcap.com/"
+          },
+          {
+            "text": "FAQ",
+            "href": "https://coinmarketcap.com/faq/"
+          },
+          {
+            "text": "Glossary",
+            "href": "https://coinmarketcap.com/academy/glossary"
+          },
+          {
+            "text": "X (Twitter)",
+            "href": "https://twitter.com/CoinMarketCap"
+          },
+          {
+            "text": "Community",
+            "href": "https://coinmarketcap.com/community/profile/CoinMarketCap/"
+          },
+          {
+            "text": "Telegram",
+            "href": "https://t.me/CoinMarketCapAnnouncements"
+          },
+          {
+            "text": "Instagram",
+            "href": "https://www.instagram.com/coinmarketcap/"
+          },
+          {
+            "text": "Facebook",
+            "href": "https://www.facebook.com/CoinMarketCap"
+          },
+          {
+            "text": "Reddit",
+            "href": "https://www.reddit.com/r/CoinMarketCap/"
+          },
+          {
+            "text": "LinkedIn",
+            "href": "https://www.linkedin.com/company/coinmarketcap/"
+          },
+          {
+            "text": "",
+            "href": "https://itunes.apple.com/app/coinmarketcap/id1282107098/?ls=1&mt=8"
+          },
+          {
+            "text": "",
+            "href": "https://play.google.com/store/apps/details/?id=com.coinmarketcap.android&hl=en_US"
+          }
+        ],
+        "sidebar": []
+      },
+      "contentStructure": {
+        "headings": [
+          {
+            "level": 1,
+            "text": "DOWGE priceDOWGE#4049",
+            "selector": ".hIeodp"
+          },
+          {
+            "level": 2,
+            "text": "DOWGE to USD Chart",
+            "selector": ".bueciC"
+          },
+          {
+            "level": 2,
+            "text": "DOWGE statistics",
+            "selector": ".kjYonB"
+          },
+          {
+            "level": 2,
+            "text": "DOWGE Markets",
+            "selector": "h2.sc-65e7f566-0"
+          },
+          {
+            "level": 2,
+            "text": "DOWGE News",
+            "selector": "h2.sc-65e7f566-0"
+          },
+          {
+            "level": 2,
+            "text": "DOWGE community",
+            "selector": "h2.sc-65e7f566-0"
+          },
+          {
+            "level": 2,
+            "text": "About DOWGE",
+            "selector": "h2.sc-65e7f566-0"
+          },
+          {
+            "level": 2,
+            "text": "Privacy Preference Center",
+            "selector": "#ot-pc-title"
+          },
+          {
+            "level": 3,
+            "text": "Most Visited Cryptocurrencies",
+            "selector": "h3.sc-65e7f566-0"
+          },
+          {
+            "level": 3,
+            "text": "Trending",
+            "selector": "h3.sc-65e7f566-0"
+          },
+          {
+            "level": 3,
+            "text": "DOWGE Price Live Data",
+            "selector": "h3.sc-65e7f566-0"
+          },
+          {
+            "level": 3,
+            "text": "Manage Consent Preferences",
+            "selector": "#ot-category-title"
+          },
+          {
+            "level": 3,
+            "text": "Cookie List",
+            "selector": "h3"
+          },
+          {
+            "level": 4,
+            "text": "Strictly Necessary Cookies",
+            "selector": "#ot-header-id-C0001"
+          },
+          {
+            "level": 4,
+            "text": "Targeting Cookies",
+            "selector": "#ot-header-id-C0004"
+          },
+          {
+            "level": 4,
+            "text": "Performance Cookies",
+            "selector": "#ot-header-id-C0002"
+          },
+          {
+            "level": 5,
+            "text": "Price",
+            "selector": "h5.sc-65e7f566-0"
+          },
+          {
+            "level": 5,
+            "text": "Price",
+            "selector": "h5.sc-65e7f566-0"
+          },
+          {
+            "level": 5,
+            "text": "Market cap",
+            "selector": "h5.sc-65e7f566-0"
+          },
+          {
+            "level": 5,
+            "text": "Market cap",
+            "selector": "h5.sc-65e7f566-0"
+          }
+        ],
+        "contentBlocks": [
+          {
+            "selector": "section",
+            "wordCount": 1,
+            "hasImages": 0,
+            "hasLinks": 1,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 40,
+            "hasImages": 55,
+            "hasLinks": 59,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 2,
+            "hasImages": 1,
+            "hasLinks": 0,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 42,
+            "hasImages": 4,
+            "hasLinks": 9,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 1,
+            "hasImages": 0,
+            "hasLinks": 0,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 52,
+            "hasImages": 1,
+            "hasLinks": 3,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 1,
+            "hasImages": 0,
+            "hasLinks": 0,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 40,
+            "hasImages": 0,
+            "hasLinks": 0,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 77,
+            "hasImages": 25,
+            "hasLinks": 28,
+            "type": "section"
+          },
+          {
+            "selector": "section",
+            "wordCount": 1,
+            "hasImages": 0,
+            "hasLinks": 0,
+            "type": "section"
+          }
+        ],
+        "mediaElements": {
+          "images": {
+            "total": 123,
+            "withAlt": 49,
+            "lazyLoaded": 116
+          },
+          "videos": {
+            "total": 0,
+            "embedded": 0
+          }
+        },
+        "interactiveElements": {
+          "buttons": 60,
+          "forms": 0,
+          "inputs": 16,
+          "clickableElements": 2
+        }
+      }
+    },
+    "technicalStack": {
+      "detectedFrameworks": [],
+      "libraries": [],
+      "buildTools": [
+        "Webpack"
+      ],
+      "cssFrameworks": [
+        "Utility CSS (likely Tailwind)"
+      ]
+    },
+    "interactionPoints": {
+      "forms": [],
+      "buttons": [
+        {
+          "text": "Log In",
+          "selector": "[data-btnname=\"Log In\"]",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "25",
+          "selector": ".WatchlistStar_watchlist-button__OX4ZZ",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Button",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "More information",
+          "selector": ".kPWFwP",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Filters",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Show full width",
+          "selector": ".gcpBEC",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Bullish",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Bearish",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Follow",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Log in and post",
+          "selector": "[data-btnname=\"Log in and post\"]",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Post",
+          "selector": "button.sc-65e7f566-0",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "Download Image",
+          "selector": "button.c-hJuqGQ",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        },
+        {
+          "text": "X (Twitter)",
+          "selector": "button.c-hJuqGQ",
+          "type": "submit",
+          "onclick": false,
+          "formAssociated": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "0",
+          "required": false,
+          "selector": "input"
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "0",
+          "required": false,
+          "selector": "input"
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Compare with",
+          "required": false,
+          "selector": "input.sc-ecd1eb4-0"
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Compare with",
+          "required": false,
+          "selector": "input.sc-ecd1eb4-0"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": "input.CheckBox_cmc-checkbox-input__DKeum"
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Search",
+          "required": false,
+          "selector": "input.cmc-input"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": "input.CheckBox_cmc-checkbox-input__DKeum"
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Search",
+          "required": false,
+          "selector": "input.cmc-input"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": "input.CheckBox_cmc-checkbox-input__DKeum"
+        },
+        {
+          "type": "checkbox",
+          "name": "ot-group-id-C0004",
+          "placeholder": "",
+          "required": false,
+          "selector": "#ot-group-id-C0004"
+        },
+        {
+          "type": "checkbox",
+          "name": "ot-group-id-C0002",
+          "placeholder": "",
+          "required": false,
+          "selector": "#ot-group-id-C0002"
+        },
+        {
+          "type": "text",
+          "name": "vendor-search-handler",
+          "placeholder": "Search…",
+          "required": false,
+          "selector": "#vendor-search-handler"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": "#chkbox-id"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": "#select-all-hosts-groups-handler"
+        },
+        {
+          "type": "checkbox",
+          "name": "",
+          "placeholder": "",
+          "required": false,
+          "selector": "#select-all-vendor-groups-handler"
+        }
+      ],
+      "dataSubmission": {
+        "forms": 0,
+        "ajaxForms": 0,
+        "fileUploads": 0,
+        "hiddenFields": 0
+      }
+    },
+    "contentAnalysis": {
+      "dataStructure": {
+        "jsonData": [
+          {
+            "type": "application/ld+json",
+            "keys": [
+              "@context",
+              "@type",
+              "itemListElement"
+            ],
+            "size": 324
+          },
+          {
+            "type": "application/json",
+            "keys": [
+              "props",
+              "page",
+              "query",
+              "buildId",
+              "assetPrefix",
+              "isFallback",
+              "isExperimentalCompile",
+              "gip",
+              "appGip",
+              "scriptLoader"
+            ],
+            "size": 105857
+          }
+        ],
+        "structuredData": [
+          {
+            "type": "https://schema.org/Table",
+            "properties": []
+          }
+        ],
+        "apiCalls": [
+          "fetch API",
+          "XMLHttpRequest"
+        ],
+        "dataAttributes": {
+          "data-static": 1,
+          "data-hide-bottom-popup": 1,
+          "data-hide-onetrust": 1,
+          "data-nscript": 5,
+          "data-n-g": 1,
+          "data-n-p": 1,
+          "data-n-css": 1,
+          "data-styled": 1,
+          "data-styled-version": 1,
+          "data-commit": 1
+        }
+      },
+      "contentPatterns": {
+        "repeatingElements": [],
+        "contentTypes": {
+          "articles": 0,
+          "blogs": 0,
+          "products": 0,
+          "news": 0
+        },
+        "navigationPatterns": {
+          "mainNav": 1,
+          "breadcrumbs": 0,
+          "pagination": 0,
+          "sidebar": 0
+        }
+      },
+      "listItems": [
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "PricePrice",
+            "Market capMarket cap"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 7,
+          "nested": false,
+          "sampleItems": [
+            "1D1D",
+            "7D7D",
+            "1M1M"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "PricePrice",
+            "Market capMarket cap"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 3,
+          "nested": false,
+          "sampleItems": [
+            "ALLALL",
+            "CEXCEX",
+            "DEXDEX"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 3,
+          "nested": false,
+          "sampleItems": [
+            "SpotSpot",
+            "PerpetualPerpetual",
+            "FuturesFutures"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "TopTop",
+            "LatestLatest"
+          ]
+        },
+        {
+          "type": "ul",
+          "selector": "ul",
+          "itemCount": 2,
+          "nested": false,
+          "sampleItems": [
+            "TopTop",
+            "LatestLatest"
+          ]
+        },
+        {
+          "type": "ol",
+          "selector": "ol",
+          "itemCount": 3,
+          "nested": false,
+          "sampleItems": [
+            "CoinMarketCap",
+            "Tokens",
+            "DOWGE"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "selector": ".sc-db1da501-3",
+          "rows": 2,
+          "columns": 11,
+          "hasHeaders": true,
+          "headerText": [
+            "#",
+            "Exchange",
+            "Pair",
+            "Price",
+            "+2% Depth",
+            "-2% Depth",
+            "Volume (24h)",
+            "Volume %",
+            "Confidence",
+            "Liquidity score",
+            "Updated"
+          ],
+          "dataRows": 1
+        },
+        {
+          "selector": "table.Table_table__kjf_L",
+          "rows": 1,
+          "columns": 5,
+          "hasHeaders": true,
+          "headerText": [
+            "Name",
+            "# of Pairs",
+            "Volume (24h)",
+            "Volume %",
+            "Median Liquidity Score"
+          ],
+          "dataRows": 0
+        },
+        {
+          "selector": ".FilterModal_filter-section__table__9Tz9p",
+          "rows": 2,
+          "columns": 5,
+          "hasHeaders": true,
+          "headerText": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "dataRows": 1
+        },
+        {
+          "selector": "table.Table_table__kjf_L",
+          "rows": 1,
+          "columns": 3,
+          "hasHeaders": true,
+          "headerText": [
+            "Name",
+            "Vote",
+            "Bullish"
+          ],
+          "dataRows": 0
+        },
+        {
+          "selector": "table.Table_table__kjf_L",
+          "rows": 11,
+          "columns": 3,
+          "hasHeaders": true,
+          "headerText": [
+            "",
+            "",
+            ""
+          ],
+          "dataRows": 10
+        }
+      ],
+      "textPatterns": {
+        "wordCount": 6904,
+        "avgWordsPerSentence": 0.15,
+        "hasPhone": false,
+        "hasEmail": false,
+        "hasPrice": true,
+        "hasDate": true
+      }
+    },
+    "performanceInsights": {
+      "loadingPatterns": {
+        "lazyImages": 116,
+        "asyncScripts": 9,
+        "deferScripts": 20,
+        "preloadLinks": 10
+      },
+      "assetOptimization": {
+        "minifiedScripts": 0,
+        "webpImages": 0,
+        "compressedAssets": 0
+      },
+      "renderingStrategy": {
+        "isCSR": false,
+        "hasSSR": null,
+        "hasStaticGeneration": false
+      },
+      "bottlenecks": [
+        "Too many scripts (41)",
+        "Many images (123) - consider lazy loading",
+        "Large DOM size - may impact performance"
+      ]
+    },
+    "metadata": {
+      "url": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+      "title": "DOWGE price today, DOWGE to USD live price, marketcap and chart | CoinMarketCap",
+      "viewport": {
+        "width": 1920,
+        "height": 945,
+        "devicePixelRatio": 1
+      },
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "language": "en-US",
+      "timestamp": 1753749424337,
+      "buildTools": [
+        "Webpack"
+      ],
+      "environment": "production"
+    },
+    "architecture": {
+      "isModular": {
+        "hasModules": false,
+        "hasImportMaps": false,
+        "hasDynamicImports": false,
+        "moduleCount": 0
+      },
+      "bundleStrategy": [
+        "webpack"
+      ],
+      "loadingStrategy": [
+        "defer",
+        "async",
+        "preload"
+      ],
+      "componentArchitecture": "Component-based (Angular)",
+      "codeStructure": {
+        "totalScripts": 41,
+        "externalScripts": 30,
+        "inlineScripts": 11,
+        "stylesheets": 18,
+        "moduleScripts": 0
+      }
+    },
+    "frameworks": [
+      {
+        "name": "React",
+        "version": "unknown",
+        "components": {
+          "rootElements": 0,
+          "fiberNodes": 0,
+          "components": []
+        },
+        "hooks": false,
+        "context": false,
+        "router": false,
+        "detected": true,
+        "indicators": {
+          "windowReact": false,
+          "reactRoot": false,
+          "reactHelmet": false,
+          "reactInSource": false,
+          "reactDevTools": false,
+          "reactFiber": false,
+          "reactBundle": true,
+          "reactDom": false,
+          "jsxInSource": false,
+          "reactScripts": false
+        }
+      },
+      {
+        "name": "Angular",
+        "version": "unknown",
+        "components": {
+          "components": 3
+        },
+        "services": 0,
+        "router": null,
+        "detected": true
+      },
+      {
+        "name": "Next.js",
+        "version": "unknown",
+        "pages": {},
+        "api": false,
+        "ssr": true,
+        "detected": true
+      }
+    ],
+    "authentication": {
+      "type": "Cookie Authentication",
+      "mechanisms": [
+        "Cookie Authentication"
+      ],
+      "flows": [],
+      "storage": [],
+      "providers": [],
+      "indicators": {
+        "cookies": [
+          {
+            "name": "sajssdk_2015_cross_new_user",
+            "hasValue": true,
+            "length": 1
+          },
+          {
+            "name": "x-csrf-token",
+            "hasValue": true,
+            "length": 224
+          }
+        ]
+      }
+    },
+    "debug": {
+      "networkRequestsCount": 0,
+      "scriptsCount": 41,
+      "elementsCount": 3348,
+      "hasReact": false,
+      "hasVue": false,
+      "hasAngular": false,
+      "timestamp": 1753749424692,
+      "pageContent": {
+        "title": "DOWGE price today, DOWGE to USD live price, marketcap and chart | CoinMarketCap",
+        "bodyLength": 647624,
+        "scriptSources": [
+          "https://script.4dex.io/localstore.js",
+          "https://s2.coinmarketcap.com/static_manually/1722412860173_1.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/webpack-6fcc6edf2a0a16e8.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/framework-c0515e2156f3938b.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/main-4d9f2625118cb1cf.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/pages/_app-9eeda2204355fdb8.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/80040-b8df0ad95c4f3bde.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/32553-1b10ab8b36079845.js",
+          "https://s2.coinmarketcap.com/cmc/_next/static/chunks/14304-f8013e6d1e96770f.js"
+        ],
+        "classNames": [
+          "DAY",
+          "sc-65e7f566-0",
+          "eQBACe",
+          "sc-c304a813-1",
+          "etSVIy",
+          "global-layout-v2",
+          "main-content",
+          "sc-c304a813-0",
+          "hEfitK",
+          "HeaderV3_global-header__Rdkas",
+          "HeaderV3_main-header__xTs_o",
+          "HeaderV3_main-header-left__bUVZv",
+          "HeaderV3_desktop-logo__hj5Wy",
+          "sc-99668632-1",
+          "dUojPs",
+          "sc-99668632-2",
+          "fAcHIx",
+          "cmc-logo",
+          "tooltip",
+          "cmc-logo-img"
+        ],
+        "windowGlobals": []
+      }
+    },
+    "pageAnalysis": {
+      "totalScripts": 41,
+      "externalScripts": 30,
+      "inlineScripts": 11,
+      "totalStyles": 26,
+      "totalImages": 123,
+      "totalForms": 0,
+      "totalLinks": 177,
+      "hasServiceWorker": true,
+      "hasLocalStorage": true,
+      "hasWebGL": true,
+      "hasWebAssembly": true,
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no",
+      "charset": "UTF-8",
+      "doctype": "html"
+    }
+  },
+  "developerInsights": [],
+  "scrapingStrategy": {},
+  "performance": {},
+  "security": {},
+  "frameworks": [
+    {
+      "name": "React",
+      "version": "unknown",
+      "components": {
+        "rootElements": 0,
+        "fiberNodes": 0,
+        "components": []
+      },
+      "hooks": false,
+      "context": false,
+      "router": false,
+      "detected": true,
+      "indicators": {
+        "windowReact": false,
+        "reactRoot": false,
+        "reactHelmet": false,
+        "reactInSource": false,
+        "reactDevTools": false,
+        "reactFiber": false,
+        "reactBundle": true,
+        "reactDom": false,
+        "jsxInSource": false,
+        "reactScripts": false
+      }
+    },
+    {
+      "name": "Angular",
+      "version": "unknown",
+      "components": {
+        "components": 3
+      },
+      "services": 0,
+      "router": null,
+      "detected": true
+    },
+    {
+      "name": "Next.js",
+      "version": "unknown",
+      "pages": {},
+      "api": false,
+      "ssr": true,
+      "detected": true
+    }
+  ],
+  "apiEndpoints": {},
+  "codeExamples": {}
+}

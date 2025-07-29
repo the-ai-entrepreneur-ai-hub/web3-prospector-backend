@@ -1,0 +1,719 @@
+{
+  "duration": 141048,
+  "eventCount": 55,
+  "events": [
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "icodrops.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753749887095,
+        "title": "ICO Drops - Calendar of active and upcoming ICO & IEO. Complete list with Token Sales",
+        "url": "https://icodrops.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "eventIndex": 1,
+      "intelligenceEnabled": {
+        "ajax": true,
+        "auth": true,
+        "journey": true,
+        "selectors": true
+      },
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 130,
+      "tabId": 2028178143,
+      "timestamp": 1753749887208,
+      "type": "session_start",
+      "url": "https://icodrops.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "eventIndex": 2,
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 5810,
+      "tabId": 2028178143,
+      "timestamp": 1753749892888,
+      "type": "page_unload",
+      "url": "https://icodrops.com/"
+    },
+    {
+      "fromUrl": "https://www.google.com/search?q=icodrops&oq=icodrops&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgYIBBAAGB4yCAgFEAAYChgeMgYIBhAAGB4yCAgHEAAYBRgeMgYICBAAGB7SAQgzOTU1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8",
+      "sessionTime": 5862,
+      "tabId": 2028178143,
+      "timestamp": 1753749892942,
+      "toUrl": "https://www.google.com/search?q=icodrops&oq=icodrops&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgYIBBAAGB4yCAgFEAAYChgeMgYIBhAAGB4yCAgHEAAYBRgeMgYICBAAGB7SAQgzOTU1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "www.google.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/search",
+        "referrer": "",
+        "timestamp": 1753749893004,
+        "title": "icodrops - Google Search",
+        "url": "https://www.google.com/search?q=icodrops&oq=icodrops&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgYIBBAAGB4yCAgFEAAYChgeMgYIBhAAGB4yCAgHEAAYBRgeMgYICBAAGB7SAQgzOTU1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 3,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 6018,
+      "tabId": 2028178143,
+      "timestamp": 1753749893095,
+      "type": "page_navigation",
+      "url": "https://www.google.com/search?q=icodrops&oq=icodrops&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgYIBBAAGB4yCAgFEAAYChgeMgYIBhAAGB4yCAgHEAAYBRgeMgYICBAAGB7SAQgzOTU1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 1050,
+        "width": 2133
+      }
+    },
+    {
+      "fromUrl": "https://www.google.com/search?q=icodrops&oq=icodrops&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgYIBBAAGB4yCAgFEAAYChgeMgYIBhAAGB4yCAgHEAAYBRgeMgYICBAAGB7SAQgzOTU1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8",
+      "sessionTime": 7805,
+      "tabId": 2028178143,
+      "timestamp": 1753749894885,
+      "toUrl": "https://icodrops.com/",
+      "type": "navigation"
+    },
+    {
+      "eventIndex": 4,
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 7833,
+      "tabId": 2028178143,
+      "timestamp": 1753749894886,
+      "type": "page_unload",
+      "url": "https://www.google.com/search?q=icodrops&oq=icodrops&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgYIBBAAGB4yCAgFEAAYChgeMgYIBhAAGB4yCAgHEAAYBRgeMgYICBAAGB7SAQgzOTU1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8"
+    },
+    {
+      "fromUrl": "https://icodrops.com/",
+      "sessionTime": 8754,
+      "tabId": 2028178143,
+      "timestamp": 1753749895834,
+      "toUrl": "https://icodrops.com/",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "icodrops.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753749897069,
+        "title": "ICO Drops - Calendar of active and upcoming ICO & IEO. Complete list with Token Sales",
+        "url": "https://icodrops.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753749897308,
+      "type": "page_navigation",
+      "url": "https://icodrops.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "icodrops.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753749897069,
+        "title": "ICO Drops - Calendar of active and upcoming ICO & IEO. Complete list with Token Sales",
+        "url": "https://icodrops.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 5,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 10240,
+      "tabId": 2028178143,
+      "timestamp": 1753749897308,
+      "type": "page_navigation",
+      "url": "https://icodrops.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://icodrops.com/",
+      "sessionTime": 17741,
+      "tabId": 2028178143,
+      "timestamp": 1753749904821,
+      "toUrl": "https://icodrops.com/bitcoin-hyper/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/bitcoin-hyper/",
+      "sessionTime": 17759,
+      "tabId": 2028178143,
+      "timestamp": 1753749904839,
+      "toUrl": "https://icodrops.com/bitcoin-hyper/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/bitcoin-hyper/",
+      "sessionTime": 37591,
+      "tabId": 2028178143,
+      "timestamp": 1753749924671,
+      "toUrl": "https://bitcoinhyper.com/en",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 37669,
+      "tabId": 2028178146,
+      "timestamp": 1753749924749,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://bitcoinhyper.com/en",
+      "sessionTime": 38461,
+      "tabId": 2028178146,
+      "timestamp": 1753749925541,
+      "toUrl": "https://bitcoinhyper.com/en",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 40095,
+      "tabId": 2028178143,
+      "timestamp": 1753749927175,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://bitcoinhyper.com/",
+      "sessionTime": 40214,
+      "tabId": 2028178146,
+      "timestamp": 1753749927294,
+      "toUrl": "https://bitcoinhyper.com/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/bitcoin-hyper/",
+      "sessionTime": 42780,
+      "tabId": 2028178143,
+      "timestamp": 1753749929860,
+      "toUrl": "https://x.com/BTC_Hyper2",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 42830,
+      "tabId": 2028178149,
+      "timestamp": 1753749929910,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://x.com/BTC_Hyper2",
+      "sessionTime": 45454,
+      "tabId": 2028178149,
+      "timestamp": 1753749932534,
+      "toUrl": "https://x.com/BTC_Hyper2",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "x.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/BTC_Hyper2",
+        "referrer": "",
+        "timestamp": 1753749935739,
+        "title": "Bitcoin Hyper (@BTC_Hyper2) / X",
+        "url": "https://x.com/BTC_Hyper2",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753749935785,
+      "type": "page_navigation",
+      "url": "https://x.com/BTC_Hyper2",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "x.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/BTC_Hyper2",
+        "referrer": "",
+        "timestamp": 1753749935739,
+        "title": "Bitcoin Hyper (@BTC_Hyper2) / X",
+        "url": "https://x.com/BTC_Hyper2",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 6,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 48709,
+      "tabId": 2028178149,
+      "timestamp": 1753749935785,
+      "type": "page_navigation",
+      "url": "https://x.com/BTC_Hyper2",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "sessionTime": 52148,
+      "tabId": 2028178143,
+      "timestamp": 1753749939228,
+      "type": "tab_switch"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "bitcoinhyper.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "",
+        "timestamp": 1753749947061,
+        "title": "Bitcoin Hyper Official Website | BTC Hyper Layer 2 Presale",
+        "url": "https://bitcoinhyper.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753749947090,
+      "type": "page_navigation",
+      "url": "https://bitcoinhyper.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "bitcoinhyper.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "",
+        "timestamp": 1753749947061,
+        "title": "Bitcoin Hyper Official Website | BTC Hyper Layer 2 Presale",
+        "url": "https://bitcoinhyper.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 7,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 60015,
+      "tabId": 2028178146,
+      "timestamp": 1753749947090,
+      "type": "page_navigation",
+      "url": "https://bitcoinhyper.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://icodrops.com/bitcoin-hyper/",
+      "sessionTime": 61593,
+      "tabId": 2028178143,
+      "timestamp": 1753749948673,
+      "toUrl": "https://t.me/btchyperz",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 61699,
+      "tabId": 2028178152,
+      "timestamp": 1753749948779,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://t.me/btchyperz",
+      "sessionTime": 62010,
+      "tabId": 2028178152,
+      "timestamp": 1753749949090,
+      "toUrl": "https://t.me/btchyperz",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 63649,
+      "tabId": 2028178143,
+      "timestamp": 1753749950729,
+      "type": "tab_switch"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "t.me",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/btchyperz",
+        "referrer": "",
+        "timestamp": 1753749951598,
+        "title": "Telegram: View @btchyperz",
+        "url": "https://t.me/btchyperz",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753749951690,
+      "type": "page_navigation",
+      "url": "https://t.me/btchyperz",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "t.me",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/btchyperz",
+        "referrer": "",
+        "timestamp": 1753749951598,
+        "title": "Telegram: View @btchyperz",
+        "url": "https://t.me/btchyperz",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 8,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 64615,
+      "tabId": 2028178152,
+      "timestamp": 1753749951690,
+      "type": "page_navigation",
+      "url": "https://t.me/btchyperz",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://icodrops.com/",
+      "sessionTime": 76637,
+      "tabId": 2028178143,
+      "timestamp": 1753749963717,
+      "toUrl": "https://icodrops.com/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/",
+      "sessionTime": 79419,
+      "tabId": 2028178143,
+      "timestamp": 1753749966499,
+      "toUrl": "https://icodrops.com/category/upcoming-ico/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/category/upcoming-ico/",
+      "sessionTime": 79435,
+      "tabId": 2028178143,
+      "timestamp": 1753749966515,
+      "toUrl": "https://icodrops.com/category/upcoming-ico/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/category/upcoming-ico/",
+      "sessionTime": 80364,
+      "tabId": 2028178143,
+      "timestamp": 1753749967444,
+      "toUrl": "https://icodrops.com/earnpark/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/earnpark/",
+      "sessionTime": 80365,
+      "tabId": 2028178143,
+      "timestamp": 1753749967445,
+      "toUrl": "https://icodrops.com/earnpark/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/earnpark/",
+      "sessionTime": 109069,
+      "tabId": 2028178143,
+      "timestamp": 1753749996149,
+      "toUrl": "https://go.earnpark.com/main",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 109071,
+      "tabId": 2028178155,
+      "timestamp": 1753749996151,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3",
+      "sessionTime": 110756,
+      "tabId": 2028178155,
+      "timestamp": 1753749997836,
+      "toUrl": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 111523,
+      "tabId": 2028178143,
+      "timestamp": 1753749998603,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://icodrops.com/earnpark/",
+      "sessionTime": 115602,
+      "tabId": 2028178143,
+      "timestamp": 1753750002682,
+      "toUrl": "https://icodrops.com/category/ended-ico/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/category/ended-ico/",
+      "sessionTime": 115619,
+      "tabId": 2028178143,
+      "timestamp": 1753750002699,
+      "toUrl": "https://icodrops.com/category/ended-ico/",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "earnpark.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/en/tokensale/",
+        "referrer": "",
+        "timestamp": 1753750005361,
+        "title": "Join EarnPark’s Token Sale Waitlist | Invest in PARK Today",
+        "url": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753750005440,
+      "type": "page_navigation",
+      "url": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "earnpark.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/en/tokensale/",
+        "referrer": "",
+        "timestamp": 1753750005361,
+        "title": "Join EarnPark’s Token Sale Waitlist | Invest in PARK Today",
+        "url": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 9,
+      "navigationReason": "page_load",
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 118363,
+      "tabId": 2028178155,
+      "timestamp": 1753750005440,
+      "type": "page_navigation",
+      "url": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://icodrops.com/category/ended-ico/",
+      "sessionTime": 123590,
+      "tabId": 2028178143,
+      "timestamp": 1753750010670,
+      "toUrl": "https://icodrops.com/delabs-games/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://icodrops.com/delabs-games/",
+      "sessionTime": 123592,
+      "tabId": 2028178143,
+      "timestamp": 1753750010672,
+      "toUrl": "https://icodrops.com/delabs-games/",
+      "type": "navigation"
+    },
+    {
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753750028089,
+      "type": "session_end",
+      "url": "https://icodrops.com/delabs-games/"
+    },
+    {
+      "eventIndex": 10,
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 141011,
+      "tabId": 2028178143,
+      "timestamp": 1753750028089,
+      "type": "session_end",
+      "url": "https://icodrops.com/delabs-games/"
+    },
+    {
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753750028095,
+      "type": "session_end",
+      "url": "https://bitcoinhyper.com/"
+    },
+    {
+      "eventIndex": 11,
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 141018,
+      "tabId": 2028178146,
+      "timestamp": 1753750028095,
+      "type": "session_end",
+      "url": "https://bitcoinhyper.com/"
+    },
+    {
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753750028105,
+      "type": "session_end",
+      "url": "https://x.com/BTC_Hyper2"
+    },
+    {
+      "eventIndex": 12,
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 141027,
+      "tabId": 2028178149,
+      "timestamp": 1753750028105,
+      "type": "session_end",
+      "url": "https://x.com/BTC_Hyper2"
+    },
+    {
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753750028109,
+      "type": "session_end",
+      "url": "https://t.me/btchyperz"
+    },
+    {
+      "eventIndex": 13,
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 141031,
+      "tabId": 2028178152,
+      "timestamp": 1753750028109,
+      "type": "session_end",
+      "url": "https://t.me/btchyperz"
+    },
+    {
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "timestamp": 1753750028113,
+      "type": "session_end",
+      "url": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3"
+    },
+    {
+      "eventIndex": 14,
+      "recordingId": "mdntehd4xmg64hm5pb",
+      "sessionId": "mdntehd4407hh5wal9m",
+      "sessionTime": 141034,
+      "tabId": 2028178155,
+      "timestamp": 1753750028113,
+      "type": "session_end",
+      "url": "https://earnpark.com/en/tokensale/?utm_source=icodrops&utm_medium=main&utm_campaign=tier3"
+    }
+  ],
+  "id": "1753750028128",
+  "timestamp": 1753750028128,
+  "url": "https://icodrops.com/"
+}

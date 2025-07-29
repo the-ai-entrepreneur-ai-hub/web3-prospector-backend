@@ -1,0 +1,279 @@
+{
+  "duration": 70447,
+  "eventCount": 18,
+  "events": [
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "www.google.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/search",
+        "referrer": "",
+        "timestamp": 1753751048480,
+        "title": "daomaker - Google Search",
+        "url": "https://www.google.com/search?q=daomaker&oq=daomaker&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyCQgGEAAYChiABDIJCAcQABgKGIAEMgYICBAAGB4yCAgJEAAYChge0gEINDk0NmowajSoAgSwAgHxBR9IwexEPzsf8QUfSMHsRD87Hw&sourceid=chrome&ie=UTF-8",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "eventIndex": 1,
+      "intelligenceEnabled": {
+        "ajax": true,
+        "auth": true,
+        "journey": true,
+        "selectors": true
+      },
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 143,
+      "tabId": 2028178293,
+      "timestamp": 1753751048589,
+      "type": "session_start",
+      "url": "https://www.google.com/search?q=daomaker&oq=daomaker&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyCQgGEAAYChiABDIJCAcQABgKGIAEMgYICBAAGB4yCAgJEAAYChge0gEINDk0NmowajSoAgSwAgHxBR9IwexEPzsf8QUfSMHsRD87Hw&sourceid=chrome&ie=UTF-8",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 1050,
+        "width": 2133
+      }
+    },
+    {
+      "eventIndex": 2,
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 8593,
+      "tabId": 2028178293,
+      "timestamp": 1753751057001,
+      "type": "page_unload",
+      "url": "https://www.google.com/search?q=daomaker&oq=daomaker&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyCQgGEAAYChiABDIJCAcQABgKGIAEMgYICBAAGB4yCAgJEAAYChge0gEINDk0NmowajSoAgSwAgHxBR9IwexEPzsf8QUfSMHsRD87Hw&sourceid=chrome&ie=UTF-8"
+    },
+    {
+      "fromUrl": "https://www.google.com/search?q=daomaker&oq=daomaker&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyCQgGEAAYChiABDIJCAcQABgKGIAEMgYICBAAGB4yCAgJEAAYChge0gEINDk0NmowajSoAgSwAgHxBR9IwexEPzsf8QUfSMHsRD87Hw&sourceid=chrome&ie=UTF-8",
+      "sessionTime": 8553,
+      "tabId": 2028178293,
+      "timestamp": 1753751057002,
+      "toUrl": "https://app.daomaker.com/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://app.daomaker.com/",
+      "sessionTime": 9483,
+      "tabId": 2028178293,
+      "timestamp": 1753751057932,
+      "toUrl": "https://app.daomaker.com/",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "app.daomaker.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753751062131,
+        "title": "Home | DAO Maker",
+        "url": "https://app.daomaker.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 3,
+      "navigationReason": "page_load",
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 13826,
+      "tabId": 2028178293,
+      "timestamp": 1753751062258,
+      "type": "page_navigation",
+      "url": "https://app.daomaker.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://app.daomaker.com/",
+      "sessionTime": 16328,
+      "tabId": 2028178293,
+      "timestamp": 1753751064777,
+      "toUrl": "https://app.daomaker.com/launchpad",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://app.daomaker.com/launchpad",
+      "sessionTime": 16412,
+      "tabId": 2028178293,
+      "timestamp": 1753751064861,
+      "toUrl": "https://app.daomaker.com/launchpad",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://app.daomaker.com/launchpad",
+      "sessionTime": 19647,
+      "tabId": 2028178293,
+      "timestamp": 1753751068096,
+      "toUrl": "https://app.daomaker.com/project/privateai",
+      "type": "navigation"
+    },
+    {
+      "eventIndex": 4,
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 19662,
+      "tabId": 2028178293,
+      "timestamp": 1753751068097,
+      "type": "page_unload",
+      "url": "https://app.daomaker.com/launchpad"
+    },
+    {
+      "fromUrl": "https://app.daomaker.com/project/privateai",
+      "sessionTime": 20598,
+      "tabId": 2028178293,
+      "timestamp": 1753751069047,
+      "toUrl": "https://app.daomaker.com/project/privateai",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "app.daomaker.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/project/privateai",
+        "referrer": "https://app.daomaker.com/launchpad",
+        "timestamp": 1753751071614,
+        "title": "PrivateAI | DAO Maker",
+        "url": "https://app.daomaker.com/project/privateai",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "timestamp": 1753751071762,
+      "type": "page_navigation",
+      "url": "https://app.daomaker.com/project/privateai",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "app.daomaker.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/project/privateai",
+        "referrer": "https://app.daomaker.com/launchpad",
+        "timestamp": 1753751071614,
+        "title": "PrivateAI | DAO Maker",
+        "url": "https://app.daomaker.com/project/privateai",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 5,
+      "navigationReason": "page_load",
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 23316,
+      "tabId": 2028178293,
+      "timestamp": 1753751071762,
+      "type": "page_navigation",
+      "url": "https://app.daomaker.com/project/privateai",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "sessionTime": 51031,
+      "tabId": 2028178301,
+      "timestamp": 1753751099480,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://www.coingecko.com/en/coins/privateai",
+      "sessionTime": 52583,
+      "tabId": 2028178301,
+      "timestamp": 1753751101032,
+      "toUrl": "https://www.coingecko.com/en/coins/privateai",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "www.coingecko.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/en/coins/privateai",
+        "referrer": "https://app.daomaker.com/",
+        "timestamp": 1753751106231,
+        "title": "PrivateAI Price: PGPT Live Price Chart, Market Cap & News Today | CoinGecko",
+        "url": "https://www.coingecko.com/en/coins/privateai",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 6,
+      "navigationReason": "page_load",
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 57905,
+      "tabId": 2028178301,
+      "timestamp": 1753751106349,
+      "type": "page_navigation",
+      "url": "https://www.coingecko.com/en/coins/privateai",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "eventIndex": 7,
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 61460,
+      "tabId": 2028178301,
+      "timestamp": 1753751109779,
+      "type": "page_unload",
+      "url": "https://www.coingecko.com/en/coins/privateai"
+    },
+    {
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "timestamp": 1753751117724,
+      "type": "session_end",
+      "url": "https://app.daomaker.com/project/privateai"
+    },
+    {
+      "eventIndex": 8,
+      "recordingId": "mdnu3dhdo5ki0dzxjx",
+      "sessionId": "mdnu3dhdsiwkhuh55h",
+      "sessionTime": 69278,
+      "tabId": 2028178293,
+      "timestamp": 1753751117724,
+      "type": "session_end",
+      "url": "https://app.daomaker.com/project/privateai"
+    }
+  ],
+  "id": "1753751118896",
+  "timestamp": 1753751118896,
+  "url": "https://www.google.com/search?q=daomaker&oq=daomaker&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgKGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyCQgGEAAYChiABDIJCAcQABgKGIAEMgYICBAAGB4yCAgJEAAYChge0gEINDk0NmowajSoAgSwAgHxBR9IwexEPzsf8QUfSMHsRD87Hw&sourceid=chrome&ie=UTF-8"
+}

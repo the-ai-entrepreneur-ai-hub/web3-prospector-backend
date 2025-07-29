@@ -1,0 +1,315 @@
+{
+  "duration": 42337,
+  "eventCount": 24,
+  "events": [
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "dappradar.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753751809404,
+        "title": "DappRadar - Discover Dapps, NFTs, Games, Tokens, and Airdrops",
+        "url": "https://dappradar.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "eventIndex": 1,
+      "intelligenceEnabled": {
+        "ajax": true,
+        "auth": true,
+        "journey": true,
+        "selectors": true
+      },
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "sessionTime": 18,
+      "tabId": 2028178310,
+      "timestamp": 1753751905392,
+      "type": "session_start",
+      "url": "https://dappradar.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "eventIndex": 2,
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "sessionTime": 2548,
+      "tabId": 2028178310,
+      "timestamp": 1753751907867,
+      "type": "page_unload",
+      "url": "https://dappradar.com/"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "dappradar.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753751916141,
+        "title": "DappRadar - Discover Dapps, NFTs, Games, Tokens, and Airdrops",
+        "url": "https://dappradar.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "timestamp": 1753751916266,
+      "type": "page_navigation",
+      "url": "https://dappradar.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "dappradar.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753751916141,
+        "title": "DappRadar - Discover Dapps, NFTs, Games, Tokens, and Airdrops",
+        "url": "https://dappradar.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 3,
+      "navigationReason": "page_load",
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "sessionTime": 10889,
+      "tabId": 2028178310,
+      "timestamp": 1753751916266,
+      "type": "page_navigation",
+      "url": "https://dappradar.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://dappradar.com/",
+      "sessionTime": 13704,
+      "tabId": 2028178310,
+      "timestamp": 1753751919085,
+      "toUrl": "https://dappradar.com/dapp/playember",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://dappradar.com/dapp/playember",
+      "sessionTime": 13705,
+      "tabId": 2028178310,
+      "timestamp": 1753751919086,
+      "toUrl": "https://dappradar.com/dapp/playember",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://dappradar.com/dapp/playember",
+      "sessionTime": 17329,
+      "tabId": 2028178310,
+      "timestamp": 1753751922710,
+      "toUrl": "https://twitter.com/play_ember",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 17465,
+      "tabId": 2028178325,
+      "timestamp": 1753751922846,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://x.com/play_ember",
+      "sessionTime": 18103,
+      "tabId": 2028178325,
+      "timestamp": 1753751923484,
+      "toUrl": "https://x.com/play_ember",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 19775,
+      "tabId": 2028178310,
+      "timestamp": 1753751925156,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://dappradar.com/",
+      "sessionTime": 26901,
+      "tabId": 2028178310,
+      "timestamp": 1753751932282,
+      "toUrl": "https://dappradar.com/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://dappradar.com/",
+      "sessionTime": 26910,
+      "tabId": 2028178310,
+      "timestamp": 1753751932291,
+      "toUrl": "https://dappradar.com/rankings/tokens?sort=priceInFiat24h&order=desc&greaterVolumeInFiat=2000",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://dappradar.com/rankings/tokens?sort=priceInFiat24h&order=desc&greaterVolumeInFiat=2000",
+      "sessionTime": 26912,
+      "tabId": 2028178310,
+      "timestamp": 1753751932293,
+      "toUrl": "https://dappradar.com/rankings/tokens?sort=priceInFiat24h&order=desc&greaterVolumeInFiat=2000",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "x.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/play_ember",
+        "referrer": "https://dappradar.com/",
+        "timestamp": 1753751933556,
+        "title": "X",
+        "url": "https://x.com/play_ember",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "timestamp": 1753751934014,
+      "type": "page_navigation",
+      "url": "https://x.com/play_ember",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "x.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/play_ember",
+        "referrer": "https://dappradar.com/",
+        "timestamp": 1753751933556,
+        "title": "X",
+        "url": "https://x.com/play_ember",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 4,
+      "navigationReason": "page_load",
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "sessionTime": 28636,
+      "tabId": 2028178325,
+      "timestamp": 1753751934014,
+      "type": "page_navigation",
+      "url": "https://x.com/play_ember",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://dappradar.com/rankings/tokens?sort=priceInFiat24h&order=desc&greaterVolumeInFiat=2000",
+      "sessionTime": 31070,
+      "tabId": 2028178310,
+      "timestamp": 1753751936451,
+      "toUrl": "https://dappradar.com/token/gaia-everworld",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://dappradar.com/token/gaia-everworld",
+      "sessionTime": 31072,
+      "tabId": 2028178310,
+      "timestamp": 1753751936453,
+      "toUrl": "https://dappradar.com/token/gaia-everworld",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 35182,
+      "tabId": 2028178328,
+      "timestamp": 1753751940563,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://x.com/GaiaEverWorld",
+      "sessionTime": 36243,
+      "tabId": 2028178328,
+      "timestamp": 1753751941624,
+      "toUrl": "https://x.com/GaiaEverWorld",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 37926,
+      "tabId": 2028178310,
+      "timestamp": 1753751943307,
+      "type": "tab_switch"
+    },
+    {
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "timestamp": 1753751947698,
+      "type": "session_end",
+      "url": "https://dappradar.com/token/gaia-everworld"
+    },
+    {
+      "eventIndex": 5,
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "sessionTime": 42319,
+      "tabId": 2028178310,
+      "timestamp": 1753751947698,
+      "type": "session_end",
+      "url": "https://dappradar.com/token/gaia-everworld"
+    },
+    {
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "timestamp": 1753751947703,
+      "type": "session_end",
+      "url": "https://x.com/play_ember"
+    },
+    {
+      "eventIndex": 6,
+      "recordingId": "mdnulqp1v324y440pt9",
+      "sessionId": "mdnulqp1rjnxsfjsqo",
+      "sessionTime": 42324,
+      "tabId": 2028178325,
+      "timestamp": 1753751947703,
+      "type": "session_end",
+      "url": "https://x.com/play_ember"
+    }
+  ],
+  "id": "1753751947718",
+  "timestamp": 1753751947718,
+  "url": "https://dappradar.com/"
+}

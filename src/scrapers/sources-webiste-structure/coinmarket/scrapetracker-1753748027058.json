@@ -1,0 +1,485 @@
+{
+  "duration": 97439,
+  "eventCount": 33,
+  "events": [
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "coinmarketcap.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "",
+        "timestamp": 1753747929645,
+        "title": "Cryptocurrency Prices, Charts And Market Capitalizations | CoinMarketCap",
+        "url": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "eventIndex": 1,
+      "intelligenceEnabled": {
+        "ajax": true,
+        "auth": true,
+        "journey": true,
+        "selectors": true
+      },
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 143,
+      "tabId": 2028178121,
+      "timestamp": 1753747929755,
+      "type": "session_start",
+      "url": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://coinmarketcap.com/",
+      "sessionTime": 3960,
+      "tabId": 2028178121,
+      "timestamp": 1753747933579,
+      "toUrl": "https://coinmarketcap.com/",
+      "type": "navigation"
+    },
+    {
+      "eventIndex": 2,
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 8445,
+      "tabId": 2028178121,
+      "timestamp": 1753747938057,
+      "type": "page_unload",
+      "url": "https://coinmarketcap.com/"
+    },
+    {
+      "fromUrl": "chrome://newtab/",
+      "sessionTime": 8526,
+      "tabId": 2028178121,
+      "timestamp": 1753747938145,
+      "toUrl": "chrome://newtab/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://www.google.com/search?q=coinmarketcap+login&oq=coinma&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIGCAEQRRg7MgcIAhAAGIAEMg0IAxAuGMcBGNEDGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGI8C0gEKMTM5ODNqMWoxNagCCLACAfEF2ZOky7pwrYE&sourceid=chrome&ie=UTF-8",
+      "sessionTime": 25427,
+      "tabId": 2028178121,
+      "timestamp": 1753747955046,
+      "toUrl": "https://www.google.com/search?q=coinmarketcap+login&oq=coinma&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIGCAEQRRg7MgcIAhAAGIAEMg0IAxAuGMcBGNEDGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGI8C0gEKMTM5ODNqMWoxNagCCLACAfEF2ZOky7pwrYE&sourceid=chrome&ie=UTF-8",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "www.google.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/search",
+        "referrer": "",
+        "timestamp": 1753747957525,
+        "title": "coinmarketcap login - Google Search",
+        "url": "https://www.google.com/search?q=coinmarketcap+login&oq=coinma&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIGCAEQRRg7MgcIAhAAGIAEMg0IAxAuGMcBGNEDGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGI8C0gEKMTM5ODNqMWoxNagCCLACAfEF2ZOky7pwrYE&sourceid=chrome&ie=UTF-8",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 3,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 27990,
+      "tabId": 2028178121,
+      "timestamp": 1753747957607,
+      "type": "page_navigation",
+      "url": "https://www.google.com/search?q=coinmarketcap+login&oq=coinma&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIGCAEQRRg7MgcIAhAAGIAEMg0IAxAuGMcBGNEDGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGI8C0gEKMTM5ODNqMWoxNagCCLACAfEF2ZOky7pwrYE&sourceid=chrome&ie=UTF-8",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 1050,
+        "width": 2133
+      }
+    },
+    {
+      "eventIndex": 4,
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 29211,
+      "tabId": 2028178121,
+      "timestamp": 1753747958811,
+      "type": "page_unload",
+      "url": "https://www.google.com/search?q=coinmarketcap+login&oq=coinma&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIGCAEQRRg7MgcIAhAAGIAEMg0IAxAuGMcBGNEDGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGI8C0gEKMTM5ODNqMWoxNagCCLACAfEF2ZOky7pwrYE&sourceid=chrome&ie=UTF-8"
+    },
+    {
+      "fromUrl": "https://www.google.com/search?q=coinmarketcap+login&oq=coinma&gs_lcrp=EgZjaHJvbWUqBwgCEAAYgAQyBggAEEUYOTIGCAEQRRg7MgcIAhAAGIAEMg0IAxAuGMcBGNEDGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGI8C0gEKMTM5ODNqMWoxNagCCLACAfEF2ZOky7pwrYE&sourceid=chrome&ie=UTF-8",
+      "sessionTime": 29193,
+      "tabId": 2028178121,
+      "timestamp": 1753747958812,
+      "toUrl": "https://coinmarketcap.com/",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://coinmarketcap.com/",
+      "sessionTime": 29258,
+      "tabId": 2028178121,
+      "timestamp": 1753747958877,
+      "toUrl": "https://coinmarketcap.com/",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "coinmarketcap.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "https://www.google.com/",
+        "timestamp": 1753747962867,
+        "title": "Cryptocurrency Prices, Charts And Market Capitalizations | CoinMarketCap",
+        "url": "https://coinmarketcap.com/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 5,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 33397,
+      "tabId": 2028178121,
+      "timestamp": 1753747963012,
+      "type": "page_navigation",
+      "url": "https://coinmarketcap.com/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added",
+      "sessionTime": 45963,
+      "tabId": 2028178121,
+      "timestamp": 1753747975582,
+      "toUrl": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added",
+      "type": "navigation"
+    },
+    {
+      "fromUrl": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added",
+      "sessionTime": 50661,
+      "tabId": 2028178121,
+      "timestamp": 1753747980280,
+      "toUrl": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+      "type": "navigation"
+    },
+    {
+      "eventIndex": 6,
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 50669,
+      "tabId": 2028178121,
+      "timestamp": 1753747980287,
+      "type": "page_unload",
+      "url": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added"
+    },
+    {
+      "fromUrl": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+      "sessionTime": 50741,
+      "tabId": 2028178121,
+      "timestamp": 1753747980360,
+      "toUrl": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+      "type": "navigation"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "coinmarketcap.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/currencies/dowge-ethereum/",
+        "referrer": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added",
+        "timestamp": 1753747983544,
+        "title": "DOWGE price today, DOWGE to USD live price, marketcap and chart | CoinMarketCap",
+        "url": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "timestamp": 1753747983658,
+      "type": "page_navigation",
+      "url": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "coinmarketcap.com",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/currencies/dowge-ethereum/",
+        "referrer": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added",
+        "timestamp": 1753747983544,
+        "title": "DOWGE price today, DOWGE to USD live price, marketcap and chart | CoinMarketCap",
+        "url": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 7,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 54042,
+      "tabId": 2028178121,
+      "timestamp": 1753747983658,
+      "type": "page_navigation",
+      "url": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "fromUrl": "https://coinmarketcap.com/currencies/dowge-ethereum/",
+      "sessionTime": 59214,
+      "tabId": 2028178121,
+      "timestamp": 1753747988833,
+      "toUrl": "https://dowge.xyz/",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 59241,
+      "tabId": 2028178124,
+      "timestamp": 1753747988860,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://dowge.xyz/",
+      "sessionTime": 59740,
+      "tabId": 2028178124,
+      "timestamp": 1753747989359,
+      "toUrl": "https://dowge.xyz/",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 79267,
+      "tabId": 2028178121,
+      "timestamp": 1753748008886,
+      "type": "tab_switch"
+    },
+    {
+      "sessionTime": 79336,
+      "tabId": 2028178127,
+      "timestamp": 1753748008955,
+      "type": "tab_switch"
+    },
+    {
+      "fromUrl": "https://t.me/dowgedog",
+      "sessionTime": 79337,
+      "tabId": 2028178127,
+      "timestamp": 1753748008956,
+      "toUrl": "https://t.me/dowgedog",
+      "type": "navigation"
+    },
+    {
+      "sessionTime": 79340,
+      "tabId": 2028178121,
+      "timestamp": 1753748008959,
+      "type": "tab_switch"
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "t.me",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/dowgedog",
+        "referrer": "",
+        "timestamp": 1753748009014,
+        "title": "Telegram: View @dowgedog",
+        "url": "https://t.me/dowgedog",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "timestamp": 1753748010061,
+      "type": "page_navigation",
+      "url": "https://t.me/dowgedog",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "t.me",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/dowgedog",
+        "referrer": "",
+        "timestamp": 1753748009014,
+        "title": "Telegram: View @dowgedog",
+        "url": "https://t.me/dowgedog",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 8,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 80444,
+      "tabId": 2028178127,
+      "timestamp": 1753748010061,
+      "type": "page_navigation",
+      "url": "https://t.me/dowgedog",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "dowge.xyz",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "",
+        "timestamp": 1753748012239,
+        "title": "DOWGE",
+        "url": "https://dowge.xyz/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "timestamp": 1753748012326,
+      "type": "page_navigation",
+      "url": "https://dowge.xyz/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "context": {
+        "contentMetrics": {},
+        "domain": "dowge.xyz",
+        "framework": null,
+        "hasAuth": false,
+        "isEcommerce": false,
+        "language": "en-US",
+        "pageType": "unknown",
+        "pathname": "/",
+        "referrer": "",
+        "timestamp": 1753748012239,
+        "title": "DOWGE",
+        "url": "https://dowge.xyz/",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      "continuousMode": true,
+      "eventIndex": 9,
+      "navigationReason": "page_load",
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 82710,
+      "tabId": 2028178124,
+      "timestamp": 1753748012326,
+      "type": "page_navigation",
+      "url": "https://dowge.xyz/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "viewport": {
+        "height": 945,
+        "width": 1920
+      }
+    },
+    {
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "timestamp": 1753748027018,
+      "type": "session_end",
+      "url": "https://coinmarketcap.com/currencies/dowge-ethereum/"
+    },
+    {
+      "eventIndex": 10,
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 97401,
+      "tabId": 2028178121,
+      "timestamp": 1753748027018,
+      "type": "session_end",
+      "url": "https://coinmarketcap.com/currencies/dowge-ethereum/"
+    },
+    {
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "timestamp": 1753748027033,
+      "type": "session_end",
+      "url": "https://dowge.xyz/"
+    },
+    {
+      "eventIndex": 11,
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 97419,
+      "tabId": 2028178124,
+      "timestamp": 1753748027033,
+      "type": "session_end",
+      "url": "https://dowge.xyz/"
+    },
+    {
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "timestamp": 1753748027043,
+      "type": "session_end",
+      "url": "https://t.me/dowgedog"
+    },
+    {
+      "eventIndex": 12,
+      "recordingId": "mdns8iz7y4d6urx9cif",
+      "sessionId": "mdns8iz7zv93vx9m3os",
+      "sessionTime": 97431,
+      "tabId": 2028178127,
+      "timestamp": 1753748027043,
+      "type": "session_end",
+      "url": "https://t.me/dowgedog"
+    }
+  ],
+  "id": "1753748027058",
+  "timestamp": 1753748027058,
+  "url": "https://coinmarketcap.com/?type=coins&tableRankBy=date_added"
+}
