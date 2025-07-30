@@ -1,0 +1,73 @@
+[
+  {
+    "name": "OKX Mascot",
+    "website": "https://dexscreener.com/solana/nwvasjm4aeubbn1rxebcbtct9ykp81dsnuksbzyjb6t",
+    "status": "New Lead",
+    "source": "CoinMarketCap",
+    "date_added": "2025-07-30",
+    "domain": "dexscreener.com",
+    "details_url": "https://coinmarketcap.com/currencies/okx-mascot/",
+    "symbol": "WALLY",
+    "twitter": "https://twitter.com/wallyokxmascot",
+    "telegram": "https://t.me/WallyOKXMascot"
+  },
+  {
+    "name": "BankrCoin",
+    "website": "https://warpcast.com/bankr",
+    "status": "New Lead",
+    "source": "CoinMarketCap",
+    "date_added": "2025-07-30",
+    "domain": "warpcast.com",
+    "details_url": "https://coinmarketcap.com/currencies/bankr-coin/",
+    "symbol": "BNKR",
+    "twitter": "https://twitter.com/bankrbot"
+  },
+  {
+    "name": "NERO Chain",
+    "website": "https://nerochain.io/",
+    "status": "New Lead",
+    "source": "CoinMarketCap",
+    "date_added": "2025-07-30",
+    "domain": "nerochain.io",
+    "details_url": "https://coinmarketcap.com/currencies/nero-chain/",
+    "symbol": "NERO",
+    "twitter": "https://twitter.com/nerochain_io",
+    "telegram": "https://t.me/NerochainOfficial",
+    "github": "https://github.com/nerochain/"
+  },
+  {
+    "name": "Vine Coin",
+    "website": "https://vinecoin.club/",
+    "status": "New Lead",
+    "source": "CoinMarketCap",
+    "date_added": "2025-07-30",
+    "domain": "vinecoin.club",
+    "details_url": "https://coinmarketcap.com/currencies/vine-coin-club/",
+    "symbol": "VINE",
+    "twitter": "https://twitter.com/VineCoinproject",
+    "telegram": "https://t.me/VineCoinvine",
+    "primary_email": "vinecoin-@outlook.com",
+    "email": "vinecoin-@outlook.com",
+    "osint_evidence": {
+      "twitter": "",
+      "telegram": "",
+      "website": "https://vinecoin.club/",
+      "whois": ""
+    },
+    "email_verification": "unverifiable",
+    "enriched_date": "2025-07-30",
+    "enriched_by": "osint-email-discovery"
+  },
+  {
+    "name": "ailiquid",
+    "website": "https://ailiquid.cc/index",
+    "status": "New Lead",
+    "source": "CoinMarketCap",
+    "date_added": "2025-07-30",
+    "domain": "ailiquid.cc",
+    "details_url": "https://coinmarketcap.com/currencies/ailiquid/",
+    "symbol": "CONSCIOUS",
+    "twitter": "https://twitter.com/AILiquid_",
+    "telegram": "https://t.me/AILiquid"
+  }
+]

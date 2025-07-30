@@ -3,6 +3,9 @@ const { exec } = require('child_process');
 const dns = require('dns').promises;
 const fs = require('fs');
 
+// Load environment variables
+require('dotenv').config();
+
 /*
  * emailDiscovery.js
  *
@@ -345,6 +348,7 @@ async function discoverProjectEmails(project) {
   }
   // Domain search via Snov.io API
   try {
+    console.log(`Attempting Snov.io enrichment for domain: ${domain}`);
     const snovioResult = await enrichDomain(domain);
     if (snovioResult && snovioResult.email) {
       const isDecisionMaker = /\b(ceo|founder|co-?founder|chief|lead|director|president|owner)\b/i.test(snovioResult.position || '');
@@ -356,24 +360,33 @@ async function discoverProjectEmails(project) {
         position: snovioResult.position,
         isDecisionMaker
       });
+      console.log(`✓ Snov.io found: ${snovioResult.email} (${snovioResult.firstName} ${snovioResult.lastName})`);
+    } else {
+      console.log(`✗ Snov.io: No results for ${domain}`);
     }
   } catch (err) {
-    // Snov.io failed, continue with other methods
+    console.log(`✗ Snov.io error for ${domain}: ${err.message}`);
+    // Continue with other methods
   }
 
   // 2. Website Scrape
+  console.log(`Scraping website: ${project.website}`);
   const { emails: websiteEmails, linkedDomains } = await crawlWebsite(project.website, browser);
   websiteEmails.forEach(({ email, name }) => {
     candidates.push({ email, source: 'website', verified: false });
   });
   result.evidence.website = websiteEmails.length ? project.website : '';
+  console.log(`✓ Website scraping found ${websiteEmails.length} emails`);
 
   // 3. Twitter OSINT
   if (project.twitter) {
+    console.log(`Scraping Twitter: @${project.twitter}`);
     const twitterData = await scrapeTwitterProfile(project.twitter, browser);
     twitterData.emails.forEach((email) => {
       candidates.push({ email, source: 'twitter', verified: false });
     });
+    console.log(`✓ Twitter scraping found ${twitterData.emails.length} emails`);
+    
     // Process additional handles or website links.
     for (const h of twitterData.handles) {
       if (h.startsWith('http')) {
@@ -397,11 +410,13 @@ async function discoverProjectEmails(project) {
 
   // 4. Telegram OSINT
   if (project.telegram) {
+    console.log(`Scraping Telegram: @${project.telegram}`);
     const telegramEmails = await scrapeTelegram(project.telegram, browser);
     telegramEmails.forEach((email) => {
       candidates.push({ email, source: 'telegram', verified: false });
     });
     result.evidence.telegram = telegramEmails[0] || '';
+    console.log(`✓ Telegram scraping found ${telegramEmails.length} emails`);
   }
 
   // 5. Permutation + Verification
@@ -439,6 +454,7 @@ async function discoverProjectEmails(project) {
   await browser.close();
 
   // 6. Cross‑Source Correlation & Ranking
+  console.log(`Total candidates found: ${candidates.length}`);
   const { primary, alternates } = rankCandidates(candidates, domain);
   result.primary_email = primary;
   result.alternate_emails = alternates;
@@ -447,6 +463,13 @@ async function discoverProjectEmails(project) {
   if (primaryCandidate) {
     result.verification_status = primaryCandidate.verified ? 'valid' : 'unverifiable';
   }
+  
+  if (primary) {
+    console.log(`✓ Selected primary email: ${primary}`);
+  } else {
+    console.log(`✗ No primary email selected from ${candidates.length} candidates`);
+  }
+  
   return result;
 }
 
