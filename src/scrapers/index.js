@@ -1,10 +1,13 @@
-const { scrapeCryptoRank } = require('./cryptorank');
-const { scrapeCoinMarketCap } = require('./coinmarketcap');
-const { scrapeDappRadar } = require('./dappradar');
-const { scrapeICODrops } = require('./icodrops');
-const { scrapeZealy } = require('./zealy');
-const { scrapeDAOMaker } = require('./daomaker');
-const { scrapePolkastarter } = require('./polkastarter');
+// ACTIVE SCRAPERS - Working and reliable
+const { scrapeCoinMarketCap } = require('./coinmarketcap-fast');
+const { scrapeICODrops } = require('./icodrops-fast');
+
+// DISABLED SCRAPERS - Under development
+// const { scrapeDappRadar } = require('./dappradar-fast');
+// const { scrapeDAOMaker } = require('./daomaker');
+// const { scrapePolkastarter } = require('./polkastarter');
+// const { scrapeZealy } = require('./zealy');
+// const { scrapeCryptoRank } = require('./cryptorank');
 const fs = require('fs');
 const path = require('path');
 
@@ -25,15 +28,18 @@ async function runAllScrapers() {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
+  // ACTIVE SCRAPERS ONLY - Focused on working pipeline
   const scrapers = [
-    { name: 'CryptoRank', func: scrapeCryptoRank },
     { name: 'CoinMarketCap', func: scrapeCoinMarketCap },
-    { name: 'DappRadar', func: scrapeDappRadar },
-    { name: 'ICODrops', func: scrapeICODrops },
-    { name: 'Zealy', func: scrapeZealy },
-    { name: 'DAOMaker', func: scrapeDAOMaker },
-    { name: 'Polkastarter', func: scrapePolkastarter }
+    { name: 'ICODrops', func: scrapeICODrops }
   ];
+
+  // DISABLED SCRAPERS - Uncomment when ready
+  // { name: 'DappRadar', func: scrapeDappRadar },
+  // { name: 'DAOMaker', func: scrapeDAOMaker },
+  // { name: 'Polkastarter', func: scrapePolkastarter },
+  // { name: 'Zealy', func: scrapeZealy },
+  // { name: 'CryptoRank', func: scrapeCryptoRank }
 
   for (const scraper of scrapers) {
     try {
@@ -45,6 +51,7 @@ async function runAllScrapers() {
       console.log(`Results from ${scraper.name} saved to ${outputFile}`);
     } catch (error) {
       console.error(`Error running ${scraper.name} scraper:`, error);
+      const outputFile = path.join(outputDir, `${scraper.name}.json`);
       console.error(`Failed to save ${scraper.name} results to ${outputFile}`); // Added for debugging
     }
   }
@@ -52,12 +59,15 @@ async function runAllScrapers() {
 }
 
 module.exports = {
-  scrapeCryptoRank,
+  // ACTIVE EXPORTS
   scrapeCoinMarketCap,
-  scrapeDappRadar,
   scrapeICODrops,
-  scrapeZealy,
-  scrapeDAOMaker,
-  scrapePolkastarter,
   runAllScrapers
+  
+  // DISABLED EXPORTS - Uncomment when ready
+  // scrapeDappRadar,
+  // scrapeDAOMaker,
+  // scrapePolkastarter,  
+  // scrapeZealy,
+  // scrapeCryptoRank
 };

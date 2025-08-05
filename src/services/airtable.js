@@ -46,10 +46,36 @@ async function findRecordByDomain(domain) {
   if (!process.env.AIRTABLE_API_KEY) return null;
   const base = getBase();
   const filter = `FIND('${domain}', {Website}) > 0`;
-  const records = await base(tableName)
-    .select({ filterByFormula: filter, maxRecords: 1 })
-    .firstPage();
-  return records.length > 0 ? records[0] : null;
+  try {
+    const records = await base(tableName)
+      .select({ filterByFormula: filter, maxRecords: 1 })
+      .firstPage();
+    return records.length > 0 ? records[0] : null;
+  } catch (error) {
+    // If Website field doesn't exist or is empty, return null
+    console.warn(`Domain matching failed for ${domain}: ${error.message}`);
+    return null;
+  }
+}
+
+/**
+ * Find a lead record in Airtable by project name.
+ * Since Website field is often empty, we use Project Name as backup.
+ */
+async function findRecordByName(projectName) {
+  if (!process.env.AIRTABLE_API_KEY) return null;
+  const base = getBase();
+  // Exact match on Project Name  
+  const filter = `{Project Name} = '${projectName.replace(/'/g, "\\\\'")}'`;
+  try {
+    const records = await base(tableName)
+      .select({ filterByFormula: filter, maxRecords: 1 })
+      .firstPage();
+    return records.length > 0 ? records[0] : null;
+  } catch (error) {
+    console.warn(`Name matching failed for ${projectName}: ${error.message}`);
+    return null;
+  }
 }
 
 /**
@@ -73,30 +99,168 @@ async function upsertLead(lead) {
   // Build the payload fields; adjust names to match your Airtable schema
   const fields = {
     'Project Name': lead.name || '',
-    'Website': lead.website || '',
     'Status': lead.status || 'New Lead',
     'Source': lead.source || 'ICODrops',
-    'Twitter': lead.twitter || '',
-    'LinkedIn': lead.linkedin || '',
     'Date Added': new Date().toISOString().split('T')[0]
   };
   
-  // Add optional fields if they exist (only if field exists in Airtable)
+  // Only add fields that exist in Airtable schema
+  // These fields need to be added to your Airtable table first
+  if (lead.website) fields['Website'] = lead.website;
   if (lead.email) fields['Email'] = lead.email;
+  if (lead.twitter) fields['Twitter'] = lead.twitter;
+  if (lead.linkedin) fields['LinkedIn'] = lead.linkedin;
   if (lead.telegram) fields['Telegram'] = lead.telegram;
+  if (lead.contactName) fields['Contact Name'] = lead.contactName;
+  if (lead.position) fields['Position'] = lead.position;
+  // Skip Enrichment Source field - not in Airtable schema
+  // if (lead.enrichmentSource) fields['Enrichment Source'] = lead.enrichmentSource;
+  // if (lead.enrichmentConfidence) fields['Enrichment Confidence'] = lead.enrichmentConfidence;
+  
+  // Handle contacts array - store as JSON string or pick best contact
+  if (lead.contacts && Array.isArray(lead.contacts) && lead.contacts.length > 0) {
+    // Store the best contact in primary fields if not already set
+    const bestContact = lead.contacts[0]; // Already sorted by decision maker score
+    
+    if (!lead.email && bestContact.email) {
+      fields['Email'] = bestContact.email;
+    }
+    if (!lead.contactName && bestContact.name) {
+      fields['Contact Name'] = bestContact.name;
+    }
+    if (!lead.position && bestContact.position) {
+      fields['Position'] = bestContact.position;
+    }
+    if (!lead.enrichmentSource && bestContact.source) {
+      fields['Enrichment Source'] = bestContact.source;
+    }
+    if (!lead.enrichmentConfidence && bestContact.confidence) {
+      fields['Enrichment Confidence'] = bestContact.confidence;
+    }
+    
+    // Store all contacts as JSON in a notes field (if available)
+    try {
+      fields['All Contacts'] = JSON.stringify(lead.contacts.slice(0, 5)); // Limit to 5 contacts
+    } catch (error) {
+      // JSON stringify failed, skip
+    }
+  }
 
-  const existing = await findRecordByDomain(lead.domain);
+  // Try to find existing record by domain first, then by name
+  let existing = await findRecordByDomain(lead.domain);
+  if (!existing && lead.name) {
+    existing = await findRecordByName(lead.name);
+  }
   if (existing) {
-    await base(tableName).update([{
-      id: existing.id,
+    try {
+      await base(tableName).update([{
+        id: existing.id,
+        fields: fields
+      }]);
+      return existing.id;
+    } catch (error) {
+      if (error.message.includes('Unknown field name')) {
+        console.warn(`⚠️ Airtable field missing: ${error.message}`);
+        console.warn('Please add missing fields to your Airtable table');
+      }
+      throw error;
+    }
+  }
+  
+  try {
+    const created = await base(tableName).create([{
       fields: fields
     }]);
-    return existing.id;
+    return created[0].id;
+  } catch (error) {
+    if (error.message.includes('Unknown field name')) {
+      console.warn(`⚠️ Airtable field missing: ${error.message}`);
+      console.warn('Please add missing fields to your Airtable table');
+    }
+    throw error;
   }
-  const created = await base(tableName).create([{
-    fields: fields
-  }]);
-  return created[0].id;
+}
+
+/**
+ * Fetch all existing leads from Airtable
+ *
+ * @returns {Promise<Array<Object>>} Array of lead objects
+ */
+async function fetchAllLeads() {
+  if (!process.env.AIRTABLE_API_KEY) {
+    console.warn('Airtable is disabled; returning empty array.');
+    return [];
+  }
+  
+  const base = getBase();
+  const leads = [];
+  
+  try {
+    await base(tableName).select({
+      // You can add any filtering here if needed
+      // filterByFormula: `{Status} != 'Processed'`,
+      maxRecords: 1000 // Adjust as needed
+    }).eachPage((records, fetchNextPage) => {
+      records.forEach(record => {
+        const fields = record.fields;
+        
+        // Map Airtable fields back to lead object structure
+        const lead = {
+          id: record.id,
+          name: fields['Project Name'] || '',
+          website: fields['Website'] || '',
+          domain: extractDomainFromWebsite(fields['Website'] || ''),
+          status: fields['Status'] || 'New Lead',
+          source: fields['Source'] || '',
+          twitter: fields['Twitter'] || '',
+          linkedin: fields['LinkedIn'] || '',
+          email: fields['Email'] || '',
+          telegram: fields['Telegram'] || '',
+          contactName: fields['Contact Name'] || '',
+          position: fields['Position'] || '',
+          enrichmentSource: fields['Enrichment Source'] || '',
+          enrichmentConfidence: fields['Enrichment Confidence'] || 0,
+          contacts: [], // Initialize empty contacts array
+          dateAdded: fields['Date Added'] || ''
+        };
+        
+        leads.push(lead);
+      });
+      
+      fetchNextPage();
+    });
+    
+    console.log(`Fetched ${leads.length} existing leads from Airtable`);
+    return leads;
+    
+  } catch (error) {
+    console.error('Error fetching leads from Airtable:', error);
+    return [];
+  }
+}
+
+/**
+ * Extract domain from website URL
+ * @param {string} website 
+ * @returns {string}
+ */
+function extractDomainFromWebsite(website) {
+  if (!website) return '';
+  
+  try {
+    // Remove protocol
+    let domain = website.replace(/^https?:\/\//, '');
+    // Remove www
+    domain = domain.replace(/^www\./, '');
+    // Remove path
+    domain = domain.split('/')[0];
+    // Remove port
+    domain = domain.split(':')[0];
+    
+    return domain.toLowerCase();
+  } catch (error) {
+    return website;
+  }
 }
 
 /**
@@ -119,4 +283,4 @@ async function upsertLeads(leads) {
   }
 }
 
-module.exports = { findRecordByDomain, upsertLead, upsertLeads };
+module.exports = { findRecordByDomain, findRecordByName, upsertLead, upsertLeads, fetchAllLeads };

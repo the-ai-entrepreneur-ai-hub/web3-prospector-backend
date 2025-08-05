@@ -432,7 +432,7 @@ async function discoverProjectEmails(project) {
       names.push(name);
     }
   });
-  // Collect names from Twitter display names.
+  // Collect names from Twitter36 display names.
   // Note: twitterData may be undefined if no twitter handle provided.
   // Add to names for permutation.
   // Generate candidate emails from permutations and verify them.
