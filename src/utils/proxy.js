@@ -1,7 +1,7 @@
 /**
  * Proxy rotation utility for web scraping
  * 
- * Provides rotating proxy support using the DataImpulse proxy service.
+ * Provides rotating proxy support using the ScraperAPI proxy service.
  * Features:
  * - Automatic proxy rotation
  * - Health checking and failover
@@ -38,13 +38,12 @@ class ProxyRotator {
    * Parse proxy configuration into usable format
    */
   parseProxyConfig(config) {
-    // For DataImpulse rotating proxy, we create multiple endpoint variations
-    // to distribute load across different sessions
+    // Use ScraperAPI configuration from environment variables
     const baseProxy = {
-      host: 'gw.dataimpulse.com',
-      port: 823,
-      username: '8c099c72ca71b14edcc0',
-      password: 'b6ed4ad954817a1e'
+      host: config.host,
+      port: config.port,
+      username: config.username,
+      password: config.password
     };
 
     // Create multiple session endpoints for better distribution
@@ -52,9 +51,7 @@ class ProxyRotator {
     for (let i = 1; i <= 5; i++) {
       proxies.push({
         ...baseProxy,
-        // Add session ID to username for sticky sessions
-        username: `${baseProxy.username}-session${i}`,
-        id: `dataimpulse-session${i}`
+        id: `scraperapi-session${i}`
       });
     }
 
@@ -316,12 +313,12 @@ class ProxyRotator {
  * Create a proxy rotator instance
  */
 function createProxyRotator() {
-  // Use environment variable or default DataImpulse config
+  // Use ScraperAPI configuration from environment variables
   const proxyConfig = {
-    host: process.env.PROXY_HOST || 'gw.dataimpulse.com',
-    port: parseInt(process.env.PROXY_PORT) || 823,
-    username: process.env.PROXY_USERNAME || '8c099c72ca71b14edcc0',
-    password: process.env.PROXY_PASSWORD || 'b6ed4ad954817a1e'
+    host: process.env.PROXY_HOST || 'proxy.scraperapi.com',
+    port: parseInt(process.env.PROXY_PORT) || 8001,
+    username: process.env.PROXY_USER || 'scraperapi',
+    password: process.env.PROXY_PASS || ''
   };
   
   return new ProxyRotator(proxyConfig);

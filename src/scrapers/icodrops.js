@@ -67,19 +67,65 @@ async function scrapeICODrops() {
 
     logger.info('Extracting project URLs from all sections');
     
-    // Extract project URLs from the main page
-    const projectUrls = await playHelper.page.evaluate((cardSelectors) => {
-      const links = document.querySelectorAll(cardSelectors.join(', '));
+    // Extract project URLs from the main page with improved logic
+    const projectUrls = await playHelper.page.evaluate(() => {
       const urls = new Set();
-      links.forEach(link => {
-        const href = link.querySelector('a')?.href; // Get href from the anchor tag within the card
-        if (href && href.includes('icodrops.com') && 
-            !href.includes('/category/') && !href.includes('/tag/')) {
+      
+      // Strategy 1: Look for project cards in main grid
+      const projectCards = document.querySelectorAll('.All-Projects__item, .project-card, .ico-card');
+      projectCards.forEach(card => {
+        const link = card.querySelector('a') || (card.tagName === 'A' ? card : null);
+        if (link && link.href && 
+            link.href.includes('icodrops.com') && 
+            !link.href.includes('/category/') && 
+            !link.href.includes('/tag/') &&
+            !link.href.includes('/about/') &&
+            !link.href.includes('/advertising/') &&
+            !link.href.includes('/legal/')) {
+          urls.add(link.href);
+        }
+      });
+      
+      // Strategy 2: Look for any project links in the content area
+      const contentArea = document.querySelector('#columns, .content, main') || document.body;
+      const allLinks = contentArea.querySelectorAll('a[href*="icodrops.com"]');
+      
+      allLinks.forEach(link => {
+        const href = link.href;
+        // Check if it's a project page (not category, tag, or other pages)
+        if (href && 
+            !href.includes('/category/') && 
+            !href.includes('/tag/') &&
+            !href.includes('/about/') &&
+            !href.includes('/advertising/') &&
+            !href.includes('/legal/') &&
+            !href.includes('/ico-stats/') &&
+            !href.includes('/vc/') &&
+            !href.includes('/points-farming/') &&
+            href !== 'https://icodrops.com/' &&
+            href.split('/').length > 4) { // Project URLs typically have more path segments
           urls.add(href);
         }
       });
+      
+      // Strategy 3: Look for specific project patterns
+      const projectItems = document.querySelectorAll('[class*="item"], [class*="card"], [class*="project"]');
+      projectItems.forEach(item => {
+        const link = item.querySelector('a') || (item.tagName === 'A' ? item : null);
+        if (link && link.href && link.href.includes('icodrops.com')) {
+          const href = link.href;
+          const pathSegments = href.split('/').filter(Boolean);
+          // Project URLs usually have at least 4 segments: https, domain, project-slug
+          if (pathSegments.length >= 3 && 
+              !href.includes('/category/') && 
+              !href.includes('/tag/')) {
+            urls.add(href);
+          }
+        }
+      });
+      
       return Array.from(urls);
-    }, projectCards);
+    });
     
     logger.info(`Found ${projectUrls.length} project URLs.`);
     
@@ -108,14 +154,14 @@ async function scrapeICODrops() {
         // Wait for project title
         await playHelper.waitForElement(projectName, { timeout: 15000 });
         
-        // Extract comprehensive project data
-        const projectData = await playHelper.page.evaluate((nameSelectors, descSelectors, socialLinkSelectors, infoSelectors) => {
+        // Extract comprehensive project data with improved logic
+        const projectData = await playHelper.page.evaluate(() => {
           const data = {
             name: null,
             website: null,
             description: null,
             category: null,
-            sale_type: 'unknown',
+            sale_type: 'ICO/IEO',
             twitter: null,
             telegram: null,
             discord: null,
@@ -131,97 +177,141 @@ async function scrapeICODrops() {
             roi: null
           };
           
-          // Extract project name
+          // Extract project name from multiple sources
+          const nameSelectors = [
+            'h1.Project-Page-Header__name',
+            '.project-title',
+            '.name',
+            'h1',
+            'h2',
+            '.project-name'
+          ];
+          
           for (const selector of nameSelectors) {
             const element = document.querySelector(selector);
-            if (element) {
+            if (element && element.textContent.trim()) {
               data.name = element.textContent.trim();
               break;
             }
           }
           
-          // Extract enhanced description
-          for (const selector of descSelectors) {
+          // Extract description from multiple sources
+          const descriptionSelectors = [
+            '.Overview-Section-Description__text',
+            '.description',
+            '.project-description',
+            '.overview-text',
+            '.project-summary',
+            'section p',
+            '.content p'
+          ];
+          
+          for (const selector of descriptionSelectors) {
             const element = document.querySelector(selector);
-            if (element) {
+            if (element && element.textContent.trim().length > 50) {
               data.description = element.textContent.trim().replace('...Show More', '').trim();
               break;
             }
           }
           
-          // Extract comprehensive social links and website
-          const socialLinks = document.querySelectorAll(socialLinkSelectors.join(', '));
-          socialLinks.forEach(link => {
+          // Extract all links and categorize them
+          const allLinks = document.querySelectorAll('a[href]');
+          allLinks.forEach(link => {
             if (!link.href) return;
             
-            const textElement = link.querySelector('.capsule__text, .text, span');
-            const text = textElement ? textElement.textContent.trim().toLowerCase() : '';
+            const text = (link.textContent || link.title || '').toLowerCase();
             const url = link.href.toLowerCase();
-            const linkText = `${url} ${text}`;
             
-            // Categorize links more comprehensively
-            if (text.includes('website') || (linkText.includes('www.') && !url.includes('twitter') && !url.includes('telegram') && !url.includes('discord'))) {
-              data.website = link.href;
-            } else if (text.includes('twitter') || url.includes('twitter.com') || url.includes('x.com')) {
+            // Get text from child elements too
+            const childText = Array.from(link.querySelectorAll('*'))
+              .map(el => el.textContent || '')
+              .join(' ')
+              .toLowerCase();
+            
+            const fullText = `${text} ${childText}`.trim();
+            
+            // Categorize links
+            if (fullText.includes('twitter') || url.includes('twitter.com') || url.includes('x.com')) {
               data.twitter = link.href;
-            } else if (text.includes('telegram') || url.includes('t.me')) {
+            } else if (fullText.includes('telegram') || url.includes('t.me')) {
               data.telegram = link.href;
-            } else if (text.includes('discord') || url.includes('discord')) {
+            } else if (fullText.includes('discord') || url.includes('discord')) {
               data.discord = link.href;
-            } else if (text.includes('github') || url.includes('github.com')) {
+            } else if (fullText.includes('github') || url.includes('github.com')) {
               data.github = link.href;
-            } else if (text.includes('medium') || url.includes('medium.com')) {
+            } else if (fullText.includes('medium') || url.includes('medium.com')) {
               data.medium = link.href;
-            } else if (text.includes('whitepaper') || text.includes('white paper')) {
+            } else if (fullText.includes('whitepaper') || fullText.includes('white paper')) {
               data.whitepaper = link.href;
-            } else if (text.includes('reddit') || url.includes('reddit.com')) {
+            } else if (fullText.includes('reddit') || url.includes('reddit.com')) {
               data.reddit = link.href;
-            } else if (text.includes('linkedin') || url.includes('linkedin.com')) {
+            } else if (fullText.includes('linkedin') || url.includes('linkedin.com')) {
               data.linkedin = link.href;
+            } else if ((fullText.includes('website') || fullText.includes('visit') || fullText.includes('official')) && 
+                       !data.website && 
+                       !url.includes('icodrops.com') && 
+                       !url.includes('twitter') && 
+                       !url.includes('telegram') && 
+                       !url.includes('discord') && 
+                       !url.includes('github') &&
+                       !url.includes('medium') &&
+                       url.startsWith('http')) {
+              data.website = link.href;
             }
           });
           
-          // Extract comprehensive project metadata
-          const infoElements = document.querySelectorAll(infoSelectors.join(', '));
+          // If no website found, try to find any external link that looks like a main website
+          if (!data.website) {
+            allLinks.forEach(link => {
+              const url = link.href.toLowerCase();
+              if (url.startsWith('http') && 
+                  !url.includes('icodrops.com') && 
+                  !url.includes('twitter') && 
+                  !url.includes('telegram') && 
+                  !url.includes('discord') && 
+                  !url.includes('github') &&
+                  !url.includes('medium') &&
+                  !url.includes('reddit') &&
+                  !url.includes('linkedin') &&
+                  !url.includes('coinmarketcap') && 
+                  !url.includes('coingecko') &&
+                  !url.includes('etherscan') &&
+                  !url.includes('bscscan')) {
+                // This looks like it could be the main website
+                data.website = link.href;
+                return; // Break out of forEach
+              }
+            });
+          }
+          
+          // Extract project metadata
+          const infoElements = document.querySelectorAll('.Project-Page-Info__item, .info-item, .project-detail, .meta-item');
           infoElements.forEach(element => {
-            const label = element.querySelector('.Project-Page-Info__item-label, .label, dt');
-            const value = element.querySelector('.Project-Page-Info__item-value, .value, dd');
+            const label = element.querySelector('.Project-Page-Info__item-label, .label, dt, .meta-label');
+            const value = element.querySelector('.Project-Page-Info__item-value, .value, dd, .meta-value');
             
             if (label && value) {
               const labelText = label.textContent.trim().toLowerCase();
               const valueText = value.textContent.trim();
               
-              if (labelText.includes('category') || labelText.includes('type')) {
+              if ((labelText.includes('category') || labelText.includes('type')) && valueText) {
                 data.category = valueText;
-              } else if (labelText.includes('symbol') || labelText.includes('token')) {
+              } else if ((labelText.includes('symbol') || labelText.includes('token')) && valueText) {
                 data.tokenSymbol = valueText;
-              } else if (labelText.includes('raise') || labelText.includes('funding')) {
+              } else if ((labelText.includes('raise') || labelText.includes('funding')) && valueText) {
                 data.totalRaise = valueText;
-              } else if (labelText.includes('start') || labelText.includes('begin')) {
+              } else if ((labelText.includes('start') || labelText.includes('begin')) && valueText) {
                 data.launch_date = valueText;
-              } else if (labelText.includes('end') || labelText.includes('finish')) {
+              } else if ((labelText.includes('end') || labelText.includes('finish')) && valueText) {
                 data.endDate = valueText;
-              } else if (labelText.includes('roi') || labelText.includes('return')) {
+              } else if ((labelText.includes('roi') || labelText.includes('return')) && valueText) {
                 data.roi = valueText;
               }
             }
           });
           
-          // Try alternative selectors for missing website data
-          if (!data.website) {
-            const websiteLinks = document.querySelectorAll('a[href]:not([href*="twitter"]):not([href*="telegram"]):not([href*="discord"]):not([href*="github"])');
-            for (const link of websiteLinks) {
-              const url = link.href.toLowerCase();
-              if (url.startsWith('http') && !url.includes('icodrops.com') && 
-                  !url.includes('coinmarketcap') && !url.includes('coingecko')) {
-                data.website = link.href;
-                break;
-              }
-            }
-          }
-          
           return data;
-        }, projectName, description, socialLinks, projectInfo);
+        });
         
         // Build complete project data in the required format
         const fullProjectData = {

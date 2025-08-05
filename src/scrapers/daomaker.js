@@ -140,12 +140,6 @@ async function scrapeDAOMaker() {
   
   logger.success(`DAO Maker scraping completed: ${results.length} projects extracted in ${(stats.duration / 1000).toFixed(1)}s`);
 
-  // Save results to file
-  const outputDir = path.join(__dirname, '..', '..', 'output');
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-  const outputFile = path.join(outputDir, 'DAOMaker.json');
   console.log("DAO Maker scraper execution finished."); // Added for debugging
   return results;
 }
@@ -158,63 +152,156 @@ async function scrapeDAOMakerSection(playHelper, section, logger) {
   
   await playHelper.navigateTo(section.url);
   
-  const selectors = playHelper.getSelectors('daomaker');
-  const { projectCards, projectName, projectStatus, description } = selectors.selectors;
+  // Wait for the page to load and handle SPA behavior
+  await playHelper.sleep(3000);
+  
+  // Wait for content with multiple strategies
+  let contentLoaded = false;
+  const loadingAttempts = [
+    // Try waiting for project cards
+    async () => await playHelper.waitForElement(['.card', '.project-card'], { timeout: 15000 }),
+    // Try waiting for any content structure
+    async () => await playHelper.waitForElement(['main', '[role="main"]', '.content'], { timeout: 15000 }),
+    // Try waiting for Next.js content
+    async () => await playHelper.waitForElement(['#__next', '[data-reactroot]'], { timeout: 15000 })
+  ];
 
-  // Wait for projects to load - try multiple selectors
-  try {
-    await playHelper.waitForElement(projectCards, { timeout: 30000 });
-  } catch (e) {
-    // Try alternative loading approach
-    await playHelper.sleep(5000);
-    await playHelper.navigateTo(section.url); // Reload page
-    await playHelper.waitForElement(projectCards, { timeout: 30000 });
+  for (const attempt of loadingAttempts) {
+    try {
+      await attempt();
+      contentLoaded = true;
+      logger.info('Content loaded successfully');
+      break;
+    } catch (e) {
+      logger.debug(`Loading attempt failed: ${e.message}`);
+      continue;
+    }
+  }
+
+  if (!contentLoaded) {
+    logger.warn('Could not detect content loading, proceeding anyway');
   }
   
+  // Additional wait for dynamic content
+  await playHelper.sleep(2000);
+  
   // Scroll down to load more projects if available
-  await playHelper.scrollDownUntilNoNewContent(projectCards[0], 500, 5); // Scroll 5 times, 500ms delay
+  await playHelper.scrollDownUntilNoNewContent(['.card', '.project-card'], 1000, 3);
 
-  // Extract project information from the section
-  const projects = await playHelper.page.evaluate((sectionName, cardSelectors, nameSelectors, statusSelectors, descSelectors) => {
-    const projectElements = document.querySelectorAll(cardSelectors.join(', '));
-    
+  // Extract project information with improved strategies
+  const projects = await playHelper.page.evaluate((sectionName) => {
     const projects = [];
     
-    projectElements.forEach((element) => {
-      let link = element;
-      if (element.tagName !== 'A') {
-        link = element.querySelector('a');
+    // Strategy 1: Look for cards
+    const cardElements = document.querySelectorAll('.card, .project-card, [class*="card"]');
+    
+    cardElements.forEach((element) => {
+      let link = element.querySelector('a') || (element.tagName === 'A' ? element : null);
+      
+      // Look for links that might contain project URLs
+      if (!link) {
+        link = element.querySelector('a[href*="/projects/"], a[href*="/project/"]');
       }
       
-      if (!link || !link.href || !link.href.includes('/projects/')) return;
-      
-      // Extract project name
-      const nameElement = element.querySelector(nameSelectors.join(', '));
-      const name = nameElement ? nameElement.textContent.trim() : 
-                   link.href.split('/projects/')[1]?.split('?')[0]?.replace(/-/g, ' ') || 'Unknown Project';
-      
-      // Extract project status/stage
-      const statusElement = element.querySelector(statusSelectors.join(', '));
-      const status = statusElement ? statusElement.textContent.trim() : sectionName;
-      
-      // Extract description if available
-      const descElement = element.querySelector(descSelectors.join(', '));
-      const description = descElement ? descElement.textContent.trim() : null;
-      
-      if (name && link.href) {
-        projects.push({
-          name,
-          url: link.href,
-          status,
-          description,
-          source: 'DAOMaker',
-          section: sectionName
+      if (link && link.href && (link.href.includes('/projects/') || link.href.includes('/project/'))) {
+        // Extract project name from various locations
+        let name = null;
+        
+        // Try to find name in common locations
+        const nameSelectors = [
+          'h3', 'h4', 'h2', '.project-name', '.title', '.card-title',
+          '[class*="name"]', '[class*="title"]'
+        ];
+        
+        for (const selector of nameSelectors) {
+          const nameElement = element.querySelector(selector);
+          if (nameElement && nameElement.textContent.trim()) {
+            name = nameElement.textContent.trim();
+            break;
+          }
+        }
+        
+        // Fallback: extract from URL
+        if (!name) {
+          const urlParts = link.href.split('/projects/')[1] || link.href.split('/project/')[1];
+          if (urlParts) {
+            name = urlParts.split('?')[0].split('/')[0].replace(/-/g, ' ').replace(/_/g, ' ');
+            name = name.charAt(0).toUpperCase() + name.slice(1);
+          }
+        }
+        
+        // Extract status/stage information
+        let status = sectionName;
+        const statusElements = element.querySelectorAll('.status, .stage, .badge, [class*="status"], [class*="stage"]');
+        statusElements.forEach(statusEl => {
+          if (statusEl.textContent.trim()) {
+            status = statusEl.textContent.trim();
+          }
         });
+        
+        // Extract description if available
+        let description = null;
+        const descElements = element.querySelectorAll('p, .description, [class*="description"]');
+        descElements.forEach(descEl => {
+          if (descEl.textContent.trim().length > 20) {
+            description = descEl.textContent.trim();
+          }
+        });
+        
+        if (name && link.href) {
+          projects.push({
+            name,
+            url: link.href,
+            status,
+            description,
+            source: 'DAOMaker',
+            section: sectionName
+          });
+        }
       }
     });
     
-    return projects;
-  }, section.name, projectCards, projectName, projectStatus, description);
+    // Strategy 2: Look for any project links if no cards found
+    if (projects.length === 0) {
+      const allLinks = document.querySelectorAll('a[href*="/projects/"], a[href*="/project/"]');
+      
+      allLinks.forEach((link, index) => {
+        if (index >= 20) return; // Limit to avoid too many results
+        
+        let name = link.textContent.trim();
+        if (!name) {
+          const urlParts = link.href.split('/projects/')[1] || link.href.split('/project/')[1];
+          if (urlParts) {
+            name = urlParts.split('?')[0].split('/')[0].replace(/-/g, ' ').replace(/_/g, ' ');
+            name = name.charAt(0).toUpperCase() + name.slice(1);
+          }
+        }
+        
+        if (name && name.length > 2) {
+          projects.push({
+            name,
+            url: link.href,
+            status: sectionName,
+            description: null,
+            source: 'DAOMaker',
+            section: sectionName
+          });
+        }
+      });
+    }
+    
+    // Remove duplicates
+    const uniqueProjects = [];
+    const seenUrls = new Set();
+    projects.forEach(project => {
+      if (!seenUrls.has(project.url)) {
+        seenUrls.add(project.url);
+        uniqueProjects.push(project);
+      }
+    });
+    
+    return uniqueProjects;
+  }, section.name);
   
   logger.success(`Extracted ${projects.length} projects from ${section.name} section`);
   return projects;
@@ -229,11 +316,11 @@ async function scrapeProjectDetails(playHelper, project, logger) {
     
     await playHelper.navigateTo(project.url);
     
-    const selectors = playHelper.getSelectors('daomaker');
-    const { description: descSelectors, socialLinks: socialLinkSelectors, website: websiteSelectors, projectInfo: metaSelectors } = selectors.selectors;
-
-    // Extract detailed information
-    const details = await playHelper.page.evaluate((descSelectors, socialLinkSelectors, websiteSelectors, metaSelectors) => {
+    // Wait for page to load
+    await playHelper.sleep(3000);
+    
+    // Extract detailed information with improved logic
+    const details = await playHelper.page.evaluate(() => {
       const data = {
         description: null,
         website: null,
@@ -251,8 +338,21 @@ async function scrapeProjectDetails(playHelper, project, logger) {
         blockchain: null
       };
       
-      // Extract enhanced description
-      for (const selector of descSelectors) {
+      // Extract description from multiple possible locations
+      const descriptionSelectors = [
+        '.project-description',
+        '.description',
+        '.about-project',
+        '[data-testid="project-description"]',
+        '.overview-text',
+        '.project-overview',
+        '.summary',
+        'section p',
+        '.content p',
+        'p'
+      ];
+      
+      for (const selector of descriptionSelectors) {
         const element = document.querySelector(selector);
         if (element && element.textContent.trim().length > 50) {
           data.description = element.textContent.trim();
@@ -260,81 +360,101 @@ async function scrapeProjectDetails(playHelper, project, logger) {
         }
       }
       
-      // Extract all social links and website
-      const allLinks = document.querySelectorAll(socialLinkSelectors.join(', '));
+      // Extract all links and categorize them
+      const allLinks = document.querySelectorAll('a[href]');
       
       allLinks.forEach(link => {
         if (!link.href) return;
         
         const url = link.href.toLowerCase();
         const text = (link.textContent || link.title || '').toLowerCase();
-        const linkText = `${url} ${text}`;
+        
+        // Get text from child elements too
+        const childText = Array.from(link.querySelectorAll('*'))
+          .map(el => el.textContent || '')
+          .join(' ')
+          .toLowerCase();
+        
+        const fullText = `${text} ${childText}`.trim();
         
         // Categorize links by domain and content
-        if (url.includes('twitter.com') || url.includes('x.com')) {
+        if (fullText.includes('twitter') || url.includes('twitter.com') || url.includes('x.com')) {
           data.twitter = link.href;
-        } else if (url.includes('discord')) {
+        } else if (fullText.includes('discord') || url.includes('discord')) {
           data.discord = link.href;
-        } else if (url.includes('t.me') || url.includes('telegram')) {
+        } else if (fullText.includes('telegram') || url.includes('t.me')) {
           data.telegram = link.href;
-        } else if (url.includes('github')) {
+        } else if (fullText.includes('github') || url.includes('github')) {
           data.github = link.href;
-        } else if (url.includes('linkedin')) {
+        } else if (fullText.includes('linkedin') || url.includes('linkedin')) {
           data.linkedin = link.href;
-        } else if (url.includes('medium.com')) {
+        } else if (fullText.includes('medium') || url.includes('medium.com')) {
           data.medium = link.href;
-        } else if (linkText.includes('whitepaper') || linkText.includes('white paper')) {
+        } else if (fullText.includes('whitepaper') || fullText.includes('white paper')) {
           data.whitepaper = link.href;
-        } else if (linkText.includes('website') || linkText.includes('visit') || 
-                  (text.includes('website') && !url.includes('daomaker.com'))) {
-          data.website = link.href;
-        } else if (!data.website && url.startsWith('http') && 
-                   !url.includes('daomaker.com') && !url.includes('twitter.com') && 
-                   !url.includes('discord') && !url.includes('telegram') && 
-                   !url.includes('github') && !url.includes('linkedin') && 
-                   !url.includes('medium.com')) {
-          // Potential website link
+        } else if ((fullText.includes('website') || fullText.includes('visit') || fullText.includes('official')) && 
+                   !data.website && 
+                   !url.includes('daomaker.com') && 
+                   !url.includes('twitter') && 
+                   !url.includes('telegram') && 
+                   !url.includes('discord') && 
+                   !url.includes('github') &&
+                   !url.includes('medium') &&
+                   !url.includes('linkedin') &&
+                   url.startsWith('http')) {
           data.website = link.href;
         }
       });
       
-      // Extract website specifically using provided selectors if not found yet
+      // If no website found, try to find any external link that looks like a main website
       if (!data.website) {
-        for (const selector of websiteSelectors) {
-          const element = document.querySelector(selector);
-          if (element && element.href && !element.href.includes('daomaker.com')) {
-            data.website = element.href;
-            break;
+        allLinks.forEach(link => {
+          const url = link.href.toLowerCase();
+          if (url.startsWith('http') && 
+              !url.includes('daomaker.com') && 
+              !url.includes('twitter') && 
+              !url.includes('telegram') && 
+              !url.includes('discord') && 
+              !url.includes('github') &&
+              !url.includes('medium') &&
+              !url.includes('linkedin') &&
+              !url.includes('reddit') &&
+              !url.includes('coinmarketcap') && 
+              !url.includes('coingecko') &&
+              !url.includes('etherscan') &&
+              !url.includes('bscscan')) {
+            // This looks like it could be the main website
+            data.website = link.href;
+            return; // Break out of forEach
           }
-        }
+        });
       }
 
-      // Extract project metadata
-      metaSelectors.forEach(selector => {
-        const container = document.querySelector(selector);
-        if (!container) return;
-        
-        const items = container.querySelectorAll('.info-item, .detail-item, .stat-item, dt, dd');
+      // Extract project metadata from various possible locations
+      const metadataContainers = document.querySelectorAll('.project-info, .project-details, .token-info, [data-testid="project-meta"], .project-stats, .info-item, .detail-item, .stat-item');
+      
+      metadataContainers.forEach(container => {
+        const items = container.querySelectorAll('dt, dd, .label, .value, div, span, p');
         
         items.forEach((item, index) => {
           const text = item.textContent.trim().toLowerCase();
           const nextItem = items[index + 1];
           const value = nextItem ? nextItem.textContent.trim() : '';
           
-          if (text.includes('category') || text.includes('sector')) {
+          if ((text.includes('category') || text.includes('sector')) && (value || item.textContent.trim())) {
             data.category = value || item.textContent.trim();
-          } else if (text.includes('symbol') || text.includes('token')) {
+          } else if ((text.includes('symbol') || text.includes('token')) && (value || item.textContent.trim())) {
             data.tokenSymbol = value || item.textContent.trim();
-          } else if (text.includes('raise') || text.includes('target')) {
+          } else if ((text.includes('raise') || text.includes('target') || text.includes('funding')) && (value || item.textContent.trim())) {
             data.totalRaise = value || item.textContent.trim();
-          } else if (text.includes('blockchain') || text.includes('network')) {
+          } else if ((text.includes('blockchain') || text.includes('network') || text.includes('chain')) && (value || item.textContent.trim())) {
             data.blockchain = value || item.textContent.trim();
           }
         });
       });
       
       return data;
-    }, descSelectors, socialLinkSelectors, websiteSelectors, metaSelectors);
+    });
     
     // Build complete project data in the required format
     const fullProjectData = {
@@ -349,9 +469,14 @@ async function scrapeProjectDetails(playHelper, project, logger) {
       source: 'DAOMaker'
     };
 
-    // Validate critical fields
-    if (!fullProjectData.project_name || !fullProjectData.website) { // Launch date might be N/A
-      logger.debug(`Filtering out ${project.name}: missing critical fields (name or website)`);
+    // Add additional context data
+    if (details.description) fullProjectData.description = details.description;
+    if (details.blockchain) fullProjectData.blockchain = details.blockchain;
+    if (details.tokenSymbol) fullProjectData.tokenSymbol = details.tokenSymbol;
+
+    // Validate critical fields - require either website or meaningful description
+    if (!fullProjectData.project_name || (!fullProjectData.website && !details.description)) {
+      logger.debug(`Filtering out ${project.name}: missing critical fields (name and either website or description)`);
       return null;
     }
     

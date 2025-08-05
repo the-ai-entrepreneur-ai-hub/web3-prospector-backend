@@ -100,45 +100,67 @@
       "marketplaces": "/rankings/category/marketplaces"
     },
     "selectors": {
+      "tableContainer": [
+        "div.rankings-page__table-wrp"
+      ],
       "dappItems": [
-        "[data-testid='dapp-item']", 
-        ".sc-AxgMl", 
-        ".dapp-card", 
-        ".ranking-item",
-        "div[class*='ListItem']",
-        "a[class*='Card']"
+        "tr[data-testid='dapp-item-row']",
+        "table tbody tr",
+        ".ranking-table tr"
       ],
       "dappLink": [
+        "a.dapp-name-link",
         "a[href*='/dapp/']", 
-        ".dapp-link",
-        "a"
+        "td:first-child a"
       ],
       "dappName": [
-        "h3", 
-        ".sc-AxgMl h4", 
-        "[data-testid='dapp-name']", 
-        ".dapp-name",
-        "div[class*='Name']"
+        "a.dapp-name-link",
+        "td:first-child a",
+        "[data-testid='dapp-name']"
       ],
       "category": [
+        ".category-tag",
+        ".tag",
         "[data-testid='dapp-category']",
-        ".category",
-        ".tag"
+        ".category"
       ],
       "description": [
+        ".dapp-description",
         "[data-testid='dapp-description']",
         ".description",
         ".about-text"
       ],
+      "website": [
+        "a[href]:not([href*='dappradar.com']):not([href*='twitter']):not([href*='telegram']):not([href*='discord'])",
+        ".website-link",
+        ".external-link"
+      ],
+      "socialLinks": [
+        ".social-links a",
+        "a[href*='twitter.com']",
+        "a[href*='t.me']",
+        "a[href*='discord']",
+        "a[href*='github']",
+        "a[href*='medium']",
+        "a[href]"
+      ],
       "blockchain": [
+        ".blockchain-name",
+        ".chain-tag",
         "[data-testid='blockchain']",
         ".blockchain",
         ".chain-name"
       ],
       "users": [
+        ".user-count",
         "[data-testid='users']",
         ".users-count",
         ".user-metric"
+      ],
+      "volume": [
+        ".volume",
+        ".trading-volume",
+        "[data-testid='volume']"
       ]
     }
   },
@@ -188,17 +210,20 @@
     },
     "selectors": {
       "projectCards": [
-        "[data-testid='project-card']",
+        ".card",
         ".project-card",
+        "[class*='card']",
+        "a[href*='/projects/']",
         ".dao-project",
-        ".project-item",
-        "a[href*='/projects/']"
+        ".project-item"
       ],
       "projectName": [
-        "h3",
-        "h4",
+        ".card h3",
+        ".card h4",
         ".project-name",
         ".title",
+        "h3",
+        "h4",
         "[data-testid='project-name']",
         ".project-title"
       ],
@@ -206,7 +231,8 @@
         ".status",
         ".stage",
         ".project-status",
-        "[data-testid='project-status']"
+        "[data-testid='project-status']",
+        ".badge"
       ],
       "description": [
         ".project-description",
@@ -215,21 +241,38 @@
         "[data-testid='project-description']",
         ".overview-text",
         ".project-overview",
-        ".summary"
+        ".summary",
+        "p"
       ],
       "socialLinks": [
-        "a[href]",
+        "a[href*='twitter.com']",
+        "a[href*='t.me']",
+        "a[href*='discord']",
+        "a[href*='github']",
+        "a[href*='medium']",
+        "a[href*='linkedin']",
         ".social-links a",
         ".project-links a",
         "[data-testid='social-link']",
-        ".external-links a"
+        ".external-links a",
+        "a[href]"
+      ],
+      "website": [
+        "a[href]:not([href*='daomaker.com']):not([href*='twitter']):not([href*='telegram']):not([href*='discord']):not([href*='github']):not([href*='medium']):not([href*='linkedin'])",
+        ".website-link",
+        ".external-link"
       ],
       "projectInfo": [
         ".project-info",
         ".project-details",
         ".token-info",
         "[data-testid='project-meta']",
-        ".project-stats"
+        ".project-stats",
+        ".info-item",
+        ".detail-item",
+        ".stat-item",
+        "dt",
+        "dd"
       ]
     }
   },
